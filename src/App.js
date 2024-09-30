@@ -7,6 +7,8 @@ import Navigation from './components/Navigation';
 import Products from './components/Products';
 import Reviews from './components/Reviews';
 
+import 'flowbite';
+
 function App() {
   return (
     <>
