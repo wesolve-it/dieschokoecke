@@ -3,7 +3,7 @@ import Chocolate from '../assets/chocolateOne.svg';
 
 export default function Hero() {
   return (
-    <div className='bg-gray-900 text-white py-10 lg:pt-16'>
+    <div className='bg-bgGray text-white py-10 lg:pt-16'>
       <h1 className='text-center text-4xl lg:text-8xl'>Indulge <span className='italic font-light font-serif'>Finest</span></h1>
       <div className='lg:flex'>
         <div className='lg:flex-1'>
