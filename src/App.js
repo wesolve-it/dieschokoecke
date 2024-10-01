@@ -6,6 +6,7 @@ import Hero from './components/Hero';
 import Navigation from './components/Navigation';
 import Products from './components/Products';
 import Reviews from './components/Reviews';
+import Features from './components/Features';
 
 import 'flowbite';
 
@@ -16,6 +17,7 @@ function App() {
       <Hero />
       <Products />
       <About />
+      <Features />
       <Reviews />
       <FAQ />
       <Footer />
