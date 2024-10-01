@@ -3,7 +3,7 @@ import 'flowbite';
 
 export default function FAQ() {
   return (
-    <div className='xl:pb-32 max-w-screen-xl xl:mx-auto'>
+    <div className='xl:pb-32 max-w-screen-xl mx-auto px-6 xl:px-0'>
       <div className='xl:text-center 2xl:mt-20'>
         <h2 className='xl:text-5xl 2xl:font-extralight 2xl:mb-6'>Frequently Asked</h2>
         <h3 className='xl:text-5xl 2xl:font-serif'>Questions</h3>
