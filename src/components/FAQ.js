@@ -6,7 +6,7 @@ export default function FAQ() {
     <div className='xl:pb-32 max-w-screen-xl mx-auto px-6 xl:px-0 mb-12 lg:mb-0'>
       <div className='text-center mt-12 2xl:mt-20'>
         <h2 className='xl:text-5xl text-3xl mb-3 font-light 2xl:mb-6'>Frequently Asked</h2>
-        <h3 className='xl:text-5xl text-3xl font-serif'>Questions</h3>
+        <h3 className='xl:text-5xl text-3xl font-serif mb-6 lg:mb-0'>Questions</h3>
       </div>
     <div id="accordion-flush" data-accordion="collapse" data-active-classes="bg-white dark:bg-gray-900 text-black dark:text-white" data-inactive-classes="text-black dark:text-gray-400" className='xl:mx-auto 2xl:mt-12'>
   <h2 id="accordion-flush-heading-1">
