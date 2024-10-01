@@ -3,12 +3,12 @@ import 'flowbite';
 
 export default function FAQ() {
   return (
-    <div className='2xl:pb-32'>
-      <div className='2xl: text-center 2xl:mt-20'>
-        <h2 className='2xl:text-5xl 2xl:font-extralight 2xl:mb-6'>Frequently Asked</h2>
-        <h3 className='2xl:text-5xl 2xl:font-serif'>Questions</h3>
+    <div className='xl:pb-32 max-w-screen-xl xl:mx-auto'>
+      <div className='xl:text-center 2xl:mt-20'>
+        <h2 className='xl:text-5xl 2xl:font-extralight 2xl:mb-6'>Frequently Asked</h2>
+        <h3 className='xl:text-5xl 2xl:font-serif'>Questions</h3>
       </div>
-    <div id="accordion-flush" data-accordion="collapse" data-active-classes="bg-white dark:bg-gray-900 text-gray-900 dark:text-white" data-inactive-classes="text-gray-500 dark:text-gray-400" className='2xl:mx-60 2xl:mt-12'>
+    <div id="accordion-flush" data-accordion="collapse" data-active-classes="bg-white dark:bg-gray-900 text-gray-900 dark:text-white" data-inactive-classes="text-gray-500 dark:text-gray-400" className='xl:mx-auto 2xl:mt-12'>
   <h2 id="accordion-flush-heading-1">
     <button type="button" className="flex items-center justify-between w-full py-5 font-bold rtl:text-right text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400 gap-3" data-accordion-target="#accordion-flush-body-1" aria-expanded="true" aria-controls="accordion-flush-body-1">
       <span>What is Flowbite?</span>
