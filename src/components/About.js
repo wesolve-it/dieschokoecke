@@ -6,7 +6,7 @@ import Image3 from '../assets/image3.png'
 export default function About() {
   return (
     <div className='bg-bgBrown'>
-      <div className='max-w-screen-xl mx-auto px-6 xl:px-0 pt-8 pb-8'>
+      <div className='max-w-screen-xl mx-auto px-6 xl:px-0 pt-8 pb-8 xl:pt-14'>
         <h2 className='text-center text-xl font-extralight lg:text-5xl lg:pr-72'>About</h2>
         <div className='lg:flex lg:flex-row'>
           <div className='hidden lg:block'>
