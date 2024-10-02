@@ -32,7 +32,7 @@ export default function Features() {
         </section>
       </div>
       <section>
-        <img src={Truffel} alt='' className='xl:ml-auto xl:w-5/6 xl:-mt-48' />
+        <img src={Truffel} alt='' className='xl:ml-auto md:w-4/6 md:mx-auto xl:-mt-48' />
       </section>
     </div>
   )
