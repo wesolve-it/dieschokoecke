@@ -12,7 +12,7 @@ export default function Hero() {
           <h3 className='text-center lg:ml-80 mt-2 lg:mt-5 font-light'>Pure Delight in Every Bite - From Our Factory to Your Doorstep</h3>
         </div>
         <div className='lg:flex-1'>
-          <img src={Chocolate} alt="Schokolade" className='h-80 mx-auto mt-10 lg:h-96 lg:-mb-60' />
+          <img src={Chocolate} alt="Schokolade" className='h-80 mx-auto mt-10 lg:min-h-screen lg:-mb-96 lg:-mt-40' />
         </div>
       </div>
       </div>
