@@ -39,7 +39,7 @@ export default function Navigation() {
         <li>
           <a href="https://flowbite.com/" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-brown-500 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">FAQ</a>
         </li>
-        <li className='bg-chocolateBrown text-textBrown rounded-full p-1 px-4 xl:-mt-1'>
+        <li className='bg-chocolateBrown text-textBrown rounded-full p-1 md:px-4 md:-mt-1 px-0'>
           <a href="https://flowbite.com/" className="block py-2 px-3 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-brown-500 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Kontakt</a>
         </li>
       </ul>
