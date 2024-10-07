@@ -12,7 +12,6 @@ export default function Hero() {
           <h3 className='text-center lg:ml-80 mt-2 lg:mt-5 font-light lg:text-right'>Hallo, schön dass du in der SchokoEcke stöberst. Bei mir gibt es hochwertige belgische Pralinen der Firma Selectinas. Viel Spaß beim Stöbern.</h3>
         </div>
         <div className='lg:flex-1'>
-          {/* <img src={Chocolate} alt="Schokolade" className='h-80 mx-auto mt-10 lg:min-h-screen md:-mb-96 md:-mt-96 xl:-mt-40 2xl:-mt-16' /> */}
           <img src={Chocolate} alt="Schokolade" className='mx-auto mt-10 h-80 lg:h-auto lg:-mb-96' />
         </div>
       </div>

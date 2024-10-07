@@ -12,23 +12,23 @@ export default function Features() {
         <section className='mb-8'>
           <section className='flex flex-row mb-4 xl:flex-col'>
             <img src={Acorn} alt="An Acorn" className='h-10 xl:mr-auto xl:mb-2' />
-            <h3 className='my-auto ml-4 font-bold xl:ml-0'>Handcrafted Perfection</h3>
+            <h3 className='my-auto ml-4 font-bold xl:ml-0'>Handgefertigte Perfektion</h3>
           </section>
-          <p className='font-light'>Expertly crafted by skilled chocolatiers for a unique taste experience</p>
+          <p className='font-light'>Von erfahrenen Chocolatiers fachmännisch hergestellt für ein einzigartiges Geschmackserlebnis</p>
         </section>
         <section className='mb-8'>
           <section className='flex flex-row mb-4 xl:-mt-20 xl:flex-col'>
             <img src={Coffee} alt="An Acorn" className='h-10 xl:mr-auto xl:mb-2' />
-            <h3 className='my-auto ml-4 font-bold xl:ml-0'>Rich Flavors</h3>
+            <h3 className='my-auto ml-4 font-bold xl:ml-0'>Reichhaltige Aromen</h3>
           </section>
-          <p className='font-light'>A diverse range of flavors, from classic milk chocolate to intense dark varieties</p>
+          <p className='font-light'>Eine vielfältige Geschmacksvielfalt, von klassischer Milchschokolade bis hin zu intensiven dunklen Sorten</p>
         </section>
         <section>
           <section className='flex flex-row mb-4 xl:-mt-20 xl:flex-col'>
             <img src={Cake} alt="An Acorn" className='h-10 xl:mr-auto xl:mb-2' />
-            <h3 className='my-auto ml-4 font-bold xl:ml-0'>Ethically Sourced Cocoa</h3>
+            <h3 className='my-auto ml-4 font-bold xl:ml-0'>Ethisch angebauter Kakao</h3>
           </section>
-          <p className='font-light'>Made with the finest cocoa beans and high-quality natural ingredients</p>
+          <p className='font-light'>Hergestellt aus feinsten Kakaobohnen und hochwertigen natürlichen Zutaten</p>
         </section>
       </div>
       <section>
