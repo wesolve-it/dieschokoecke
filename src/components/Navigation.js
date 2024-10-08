@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import Logo from '../assets/FullLogo_Transparent_NoBuffer.png';
-import Link from 'react-scroll';
 import { NavLink } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
