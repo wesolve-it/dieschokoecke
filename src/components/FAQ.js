@@ -1,9 +1,10 @@
 import React from 'react';
 import 'flowbite';
+import { Element } from 'react-scroll';
 
 export default function FAQ() {
   return (
-    <div className='xl:pb-32 max-w-screen-xl mx-auto px-6 xl:px-0 mb-12 lg:mb-0'>
+    <Element className='xl:pb-32 max-w-screen-xl mx-auto px-6 xl:px-0 mb-12 lg:mb-0' id="faq" name="faq">
       <div className='text-center mt-12 2xl:mt-20'>
         <h2 className='xl:text-5xl text-3xl mb-3 font-light 2xl:mb-6'>Häufig gefragt</h2>
         <h3 className='xl:text-5xl text-3xl font-serif mb-6 lg:mb-0'>Antworten</h3>
@@ -49,6 +50,6 @@ export default function FAQ() {
     </div>
   </div>
       </div>
-      </div>
+      </Element>
   )
 }

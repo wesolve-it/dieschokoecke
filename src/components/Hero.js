@@ -1,9 +1,10 @@
 import React from 'react'
 import Chocolate from '../assets/chocolateOne.svg';
+import { Element } from 'react-scroll';
 
 export default function Hero() {
   return (
-    <div className='bg-bgGray text-white py-10 lg:pt-16'>
+    <Element className='bg-bgGray text-white py-10 lg:pt-16' id="home" name="home">
       <div className='max-w-screen-xl mx-auto px-6 xl:px-0'>
       <h1 className='text-center text-4xl lg:text-8xl'>die <span className='italic font-light font-serif'>schokoecke</span></h1>
       <div className='lg:flex'>
@@ -16,6 +17,6 @@ export default function Hero() {
         </div>
       </div>
       </div>
-    </div>
+    </Element>
   )
 }

@@ -2,10 +2,11 @@ import React from 'react';
 import Image1 from '../assets/image1.png'
 import Image2 from '../assets/image2.png'
 import Image3 from '../assets/image3.png'
+import { Element } from 'react-scroll';
 
 export default function About() {
   return (
-    <div className='bg-bgBrown'>
+    <Element className='bg-bgBrown' id="about" name="about">
       <div className='max-w-screen-xl mx-auto px-6 xl:px-0 pt-8 pb-8 xl:pt-14'>
         <h2 className='text-center text-xl font-extralight lg:text-5xl lg:pr-72'>Über</h2>
         <div className='lg:flex lg:flex-row'>
@@ -24,6 +25,6 @@ export default function About() {
           </div>
         </div>
       </div>
-    </div>
+    </Element>
   );
 }

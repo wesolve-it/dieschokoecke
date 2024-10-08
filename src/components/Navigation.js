@@ -1,19 +1,73 @@
 import React, { useState } from 'react'
 import Logo from '../assets/FullLogo_Transparent_NoBuffer.png';
+import Link from 'react-scroll';
+import { NavLink } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate()
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   }
 
+  const handleScrollToAbout = () => {
+    // Navigiere zur Home-Seite
+    navigate('/');
+
+    // Zeitverzögerung, um sicherzustellen, dass die Home-Seite und About-Komponente gerendert sind
+    setTimeout(() => {
+      const aboutSection = document.getElementById('about');
+      if (aboutSection) {
+        window.scrollTo({
+          top: aboutSection.offsetTop,
+          behavior: 'smooth'
+        });
+      }
+    }, 300); // Die Verzögerung kann je nach Ladezeit der Seite angepasst werden
+  };
+
+  const handleScrollToHome = () => {
+    // Navigiere zur Home-Seite
+    navigate('/');
+
+    // Zeitverzögerung, um sicherzustellen, dass die Home-Seite und About-Komponente gerendert sind
+    setTimeout(() => {
+      const homeSection = document.getElementById('home');
+      if (homeSection) {
+        window.scrollTo({
+          top: homeSection.offsetTop,
+          behavior: 'smooth'
+        });
+      }
+    }, 300); // Die Verzögerung kann je nach Ladezeit der Seite angepasst werden
+  };
+
+  const handleScrollToFAQ = () => {
+    // Navigiere zur Home-Seite
+    navigate('/');
+
+    // Zeitverzögerung, um sicherzustellen, dass die Home-Seite und About-Komponente gerendert sind
+    setTimeout(() => {
+      const faqSection = document.getElementById('faq');
+      if (faqSection) {
+        window.scrollTo({
+          top: faqSection.offsetTop,
+          behavior: 'smooth'
+        });
+      }
+    }, 300); // Die Verzögerung kann je nach Ladezeit der Seite angepasst werden
+  };
+
+
+
   return (
     <nav className="bg-white border-gray-200 dark:bg-gray-900">
   <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-    <a href="https://flowbite.com/" className="flex items-center space-x-3 rtl:space-x-reverse">
+    <NavLink to="/" className="flex items-center space-x-3 rtl:space-x-reverse">
         <img src={Logo} className="h-14" alt="dieschokoecke Logo" />
-    </a>
+    </NavLink>
         <button
           onClick={toggleMenu}
           type="button"
@@ -28,19 +82,19 @@ export default function Navigation() {
     <div className={`${isMenuOpen ? 'block' : 'hidden'} w-full md:block md:w-auto`} id="navbar-default">
       <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
         <li>
-          <a href="https://flowbite.com/" className="block py-2 px-3 text-white bg-brown-700 rounded md:bg-transparent md:text-brown-500 md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">Home</a>
+          <button onClick={handleScrollToHome} className="block py-2 px-3 text-white bg-brown-700 rounded md:bg-transparent md:text-brown-500 md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">Home</button>
         </li>
         <li>
-          <a href="https://flowbite.com/" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-brown-500 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Über uns</a>
+          <button onClick={handleScrollToAbout} className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-brown-500 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Über uns</button>
         </li>
         <li>
-          <a href="https://flowbite.com/" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-brown-500 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Produkte</a>
+          <NavLink to="produkte" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-brown-500 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Produkte</NavLink>
         </li>
         <li>
-          <a href="https://flowbite.com/" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-brown-500 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">FAQ</a>
+          <button onClick={handleScrollToFAQ} className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-brown-500 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">FAQ</button>
         </li>
         <li className='bg-chocolateBrown text-textBrown rounded-full p-1 md:px-4 md:-mt-1 px-0'>
-          <a href="https://flowbite.com/" className="block py-2 px-3 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-brown-500 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Kontakt</a>
+          <NavLink to="kontakt" className="block py-2 px-3 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-brown-500 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Kontakt</NavLink>
         </li>
       </ul>
     </div>

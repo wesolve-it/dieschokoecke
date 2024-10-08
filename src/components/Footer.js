@@ -1,27 +1,47 @@
 import React from 'react'
 import Chocolate from '../assets/FullLogo_Transparent_NoBuffer.png'
 import Instagram from '../assets/instagram.svg';
+import { NavLink } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export default function Footer() {
+    const navigate = useNavigate()
+
+    const handleScrollToFAQ = () => {
+        // Navigiere zur Home-Seite
+        navigate('/');
+    
+        // Zeitverzögerung, um sicherzustellen, dass die Home-Seite und About-Komponente gerendert sind
+        setTimeout(() => {
+          const faqSection = document.getElementById('faq');
+          if (faqSection) {
+            window.scrollTo({
+              top: faqSection.offsetTop,
+              behavior: 'smooth'
+            });
+          }
+        }, 300); // Die Verzögerung kann je nach Ladezeit der Seite angepasst werden
+      };
+
   return (
     <footer className="bg-bgBrown dark:bg-gray-900">
     <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
-              <a href="https://flowbite.com/" className="flex items-center flex-col">
+              <NavLink to="/" className="flex items-center flex-col">
                   <img src={Chocolate} className="h-8 me-3 lg:h-20" alt="dieschokoecke Logo" />
                   <span className="self-center mt-4 text-gray-500 whitespace-nowrap dark:text-white font-light">QUALITÄT IN SCHOKOLADE</span>
-              </a>
+              </NavLink>
           </div>
           <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-4">
               <div>
                   <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Informationen</h2>
                   <ul className="text-gray-500 dark:text-gray-400 font-medium">
                       <li className="mb-4">
-                          <a href="https://flowbite.com/" className="hover:underline">Produkte</a>
+                          <NavLink to="produkte" className="hover:underline">Produkte</NavLink>
                       </li>
                       <li>
-                          <a href="https://tailwindcss.com/" className="hover:underline">FAQ</a>
+                          <button onClick={handleScrollToFAQ} className="hover:underline">FAQ</button>
                       </li>
                   </ul>
               </div>
@@ -29,7 +49,7 @@ export default function Footer() {
                   <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Kontakt</h2>
                   <ul className="text-gray-500 dark:text-gray-400 font-medium">
                       <li className="mb-4">
-                          <a href="https://dieschokoecke.de/kontakt" className="hover:underline ">Kontaktiere uns</a>
+                          <NavLink to="kontakt" className="hover:underline ">Kontaktiere uns</NavLink>
                       </li>
                       <li className="mb-4">
                           <a href="mailto:kontakt@dieschokoecke.de" className="hover:underline">Email</a>
@@ -43,10 +63,10 @@ export default function Footer() {
                   <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Rechtliches</h2>
                   <ul className="text-gray-500 dark:text-gray-400 font-medium">
                       <li className="mb-4">
-                          <a href="https://flowbite.com/" className="hover:underline">Impressum</a>
+                          <NavLink to="impressum" className="hover:underline">Impressum</NavLink>
                       </li>
                       <li>
-                          <a href="https://flowbite.com/" className="hover:underline">Datenschutz</a>
+                          <NavLink to="datenschutz" className="hover:underline">Datenschutz</NavLink>
                       </li>
                   </ul>
               </div>

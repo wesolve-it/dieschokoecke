@@ -12,9 +12,8 @@ import 'flowbite';
 
 function App() {
   return (
-    <div>
-      <Navigation />
       <BrowserRouter>
+      <Navigation />
         <Routes>
           <Route index element={<Home />} />
           <Route path="datenschutz" element={<Privacy />} />
@@ -23,9 +22,8 @@ function App() {
           <Route path="impressum" element={<Impressum />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
-      </BrowserRouter>
       <Footer />
-    </div>
+      </BrowserRouter>
   );
 }
 
