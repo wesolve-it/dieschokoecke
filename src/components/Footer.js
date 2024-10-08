@@ -35,7 +35,7 @@ export default function Footer() {
                           <a href="mailto:kontakt@dieschokoecke.de" className="hover:underline">Email</a>
                       </li>
                       <li>
-                          <a href="https://discord.gg/4eeurUVvTy" className="hover:underline">WhatsApp</a>
+                          <a href="https://wa.me/491748130465" className="hover:underline">WhatsApp</a>
                       </li>
                   </ul>
               </div>
