@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Privacy() {
   return (
-    <div className='max-w-screen-xl'>
+    <div className='max-w-screen-xl mx-auto py-12'>
         <h1>Datenschutzerklärung</h1>
 <h2 id="m4158">Präambel</h2>
 <p>Mit der folgenden Datenschutzerklärung möchten wir Sie darüber aufklären, welche Arten Ihrer personenbezogenen Daten (nachfolgend auch kurz als "Daten" bezeichnet) wir zu welchen Zwecken und in welchem Umfang im Rahmen der Bereitstellung unserer Applikation verarbeiten.</p>

@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Impressum() {
   return (
-    <div className='max-w-screen-xl'>
+    <div className='max-w-screen-xl mx-auto py-12'>
         <h1>Impressum</h1>
 
         <p>Anja Scharf<br />
