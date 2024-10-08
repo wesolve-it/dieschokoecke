@@ -32,7 +32,7 @@ export default function Footer() {
                           <a href="https://github.com/themesberg/flowbite" className="hover:underline ">Kontaktiere uns</a>
                       </li>
                       <li className="mb-4">
-                          <a href="https://discord.gg/4eeurUVvTy" className="hover:underline">Email</a>
+                          <a href="mailto:kontakt@dieschokoecke.de" className="hover:underline">Email</a>
                       </li>
                       <li>
                           <a href="https://discord.gg/4eeurUVvTy" className="hover:underline">WhatsApp</a>
