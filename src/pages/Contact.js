@@ -1,12 +1,26 @@
 import React from 'react'
 
 export default function Contact() {
+  const handleSubmit = (event) => {
+    event.preventDefault(); // Verhindert das Standardformularverhalten
+    const form = event.target; // Zugriff auf das aktuelle Formular
+    const data = new FormData(form); // Erstellen von FormData aus dem Formular
+
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(data).toString(), // Umwandeln in URLSearchParams
+    })
+      .then(() => alert("Formular erfolgreich gesendet!")) // Erfolgsnachricht
+      .catch((error) => alert("Fehler beim Senden des Formulars", error)); // Fehlerbehandlung
+  };
+
   return (
     <section className="bg-white dark:bg-gray-900 mb-10">
   <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
       <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">Kontaktiere uns</h2>
       <p className="mb-8 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl">Haben Sie ein technisches Problem? Möchten Sie Feedback zu einer Beta-Funktion senden? Benötigen Sie Details zu unserem Businessplan? Lassen Sie es uns wissen.</p>
-      <form name="contact" method='POST' data-netlify="true" className="space-y-8">
+      <form name="contact" method='POST' data-netlify="true" className="space-y-8" onSubmit={handleSubmit}>
         <input type='hidden' name="contact" value="contact" />
           <div>
               <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Email</label>
