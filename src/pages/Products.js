@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Product from '../components/Product';
 
 export default function Products({products}) {
