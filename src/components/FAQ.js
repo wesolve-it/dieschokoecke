@@ -3,22 +3,6 @@ import 'flowbite';
 import { Element } from 'react-scroll';
 
 export default function FAQ({faqEntries}) {
-  // Array mit dynamischen Fragen und Antworten
-  const faqData = [
-    {
-      title: 'What types of chocolates do you offer?',
-      answer: 'We offer a diverse range of chocolates including milk, dark, and white chocolate varieties. Additionally, we have seasonal and limited-edition flavors, as well as artisanal creations.'
-    },
-    {
-      title: 'Are your chocolates handmade?',
-      answer: 'Yes, our chocolates are handmade with care using traditional methods, ensuring premium quality and taste in every piece.'
-    },
-    {
-      title: 'Do you use ethically sourced cocoa?',
-      answer: 'Absolutely! We source our cocoa from ethical and sustainable farms to ensure fair trade and environmentally friendly practices.'
-    }
-  ];
-
   return (
     <Element className='xl:pb-32 max-w-screen-xl mx-auto px-6 xl:px-0 mb-12 lg:mb-0' id="faq" name="faq">
       <div className='text-center mt-12 2xl:mt-20'>

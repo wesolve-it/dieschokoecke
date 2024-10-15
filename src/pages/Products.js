@@ -1,13 +1,7 @@
 import React, { useEffect } from 'react';
 import Product from '../components/Product';
-import { chocolates } from '../data/chocolates';
 
 export default function Products({products}) {
-
-  useEffect(() => {
-    console.log(products);
-  }, [])
-
   return (
     <div className='mt-12 mb-20'>
       <h1 className='max-w-screen-xl text-4xl mx-auto px-6'>Hier finden sie unsere Auswahl an leckeren Trüffeln</h1>
