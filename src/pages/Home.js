@@ -6,7 +6,7 @@ import Features from '../components/Features';
 import Reviews from '../components/Reviews';
 import FAQ from '../components/FAQ';
 
-export default function Home() {
+export default function Home({faqEntries}) {
   return (
     <>
       <Hero />
@@ -14,7 +14,7 @@ export default function Home() {
       <About />
       <Features />
       <Reviews />
-      <FAQ />
+      <FAQ faqEntries={faqEntries} />
     </>
   )
 }

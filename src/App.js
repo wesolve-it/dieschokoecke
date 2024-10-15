@@ -9,16 +9,31 @@ import Products from './pages/Products';
 import Impressum from './pages/Impressum';
 import NotFound from './pages/NotFound';
 import 'flowbite';
+import { useEffect, useState } from 'react';
+import client from './Client';
 
 function App() {
+  const [products, setProducts] = useState([]);
+  const [faqEntries, setFaqEntries] = useState([]);
+
+  useEffect(() => {
+    client.getEntries({ content_type: 'product'})
+      .then((response) => setProducts(response.items))
+      .catch(console.error);
+
+    client.getEntries({content_type: 'faq'})
+      .then((response) => setFaqEntries(response.items))
+      .catch(console.error);
+  }, [])
+
   return (
       <BrowserRouter>
       <Navigation />
         <Routes>
-          <Route index element={<Home />} />
+          <Route index element={<Home faqEntries={faqEntries} />} />
           <Route path="datenschutz" element={<Privacy />} />
           <Route path="kontakt" element={<Contact />} />
-          <Route path="produkte" element={<Products />} />
+          <Route path="produkte" element={<Products products={products} />} />
           <Route path="impressum" element={<Impressum />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

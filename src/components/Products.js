@@ -1,5 +1,6 @@
 import React from 'react'
 import Truffel from '../assets/truffel.svg';
+import { Link } from 'react-router-dom';
 
 export default function Products() {
   return (
@@ -9,7 +10,9 @@ export default function Products() {
           <h2 className='text-4xl text-center mb-6 lg:text-6xl lg:text-left font-extralight leading-snug'>Handwerkliche Qualität <span className='text-xl lg:text-3xl'>bis</span> <span className='font-serif'>ins Detail</span></h2>
           <p className='mb-6 leading-7 font-light'>Belgische Kako-Trüffel unsere Gaumenschmeichler und Geheimtipp für Geburtstage, als Geschenke für gute Kunden, oder sich selbst zu beschenken. Verpackt im Geschenkkarton oder im Organzpäckchen.</p>
           <section className='text-center'>
-            <button className='rounded-full py-2 px-4 bg-chocolateBrown text-textBrown font-light uppercase'>Entdecke unsere Schokolade</button>
+            <Link to="Produkte">
+              <button className='rounded-full py-2 px-4 bg-chocolateBrown text-textBrown font-light uppercase'>Entdecke unsere Schokolade</button>
+            </Link>
           </section>
         </div>
       <div className='lg:flex-1'>
