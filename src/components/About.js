@@ -16,7 +16,12 @@ export default function About() {
           <div className='lg:flex-1'>
             <div>
               <h1 className='text-3xl text-center lg:text-left font-light mb-6 lg:text-5xl'>dieschokoecke</h1>
-              <p className='font-light text-left'>„Willkommen bei dieschokoecke, wo Leidenschaft auf Handwerkskunst trifft. Unsere Schokoladen werden aus den besten Zutaten hergestellt, sodass jeder Bissen ein Hauch von Luxus ist. Entdecken Sie eine Welt voller Aromen, von klassischer Milchschokolade bis hin zu abenteuerlichen dunklen Sorten.“</p>
+              <p className='font-light text-left'>Mein Name ist Anja Scharf, ich bin geboren in Bochum und lebe seit 30 Jahren im schönen Lauf. Ich bin verheiratet und habe 2 erwachsene Söhne.
+Ich darf seit September 2024 exklusiv, die Kakao-Trüffel und Pralinen/Trüffel, der Firma Selectinas anbieten und verkaufen. 
+Die Trüffel sind vielen noch bekannt, denn eine große Auswahl gab es bei der Firma Mundi-Weine, die mittlerweile geschlossen ist.
+Gerne dürfen Sie mich telefonisch, per Email, oder WhatsApp kontaktieren.
+Ich freue mich auf Sie! <br/>
+Ihre Anja Scharf</p>
             </div>
             <div className='lg:flex lg:flex-row'>
               <img src={Image3} alt="Bild von Trüffeln" className='hidden lg:block lg:pl-20 lg:mt-32 lg:h-96' />
