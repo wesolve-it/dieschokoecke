@@ -8,7 +8,7 @@ import Contact from './pages/Contact';
 import Products from './pages/Products';
 import Impressum from './pages/Impressum';
 import NotFound from './pages/NotFound';
-import 'flowbite';
+import 'flowbite/dist/flowbite.min.js';
 import { useEffect, useState } from 'react';
 import client from './Client';
 
