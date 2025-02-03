@@ -22,7 +22,7 @@ const CouponModal = () => {
         <div className='pl-6'>
         <img className='object-cover mb-8' src={require('../assets/n-land-1j9c4filjl4limt8zxul-logowide.png')} alt='Bild des Heimatgutscheins' />
         </div>
-        <p className="mb-4">Ab sofort bieten wir auch die Möglichkeit, bei uns den Heimatgutschein zu nutzen. Genieße unsere leckeren Produkte mit Deinen liebsten!</p>
+        <p className="mb-4">Ab sofort bieten wir auch die Möglichkeit, bei uns den Heimatgutschein zu nutzen. Genieße unsere leckeren Produkte mit Deinen Liebsten!</p>
         <button
           className="mt-4 px-6 py-2 bg-textBrown text-chocolateBrown rounded-full transition"
           onClick={() => setModalVisible(false)}
