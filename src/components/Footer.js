@@ -91,6 +91,7 @@ export default function Footer() {
               </a>
                       </li>
                   </ul>
+                  <img src={require('../assets/n-land-1j9c4filjl4limt8zxul-logowide.png')} alt="Heimatgutschein Logo" />
               </div>
           </div>
       </div>

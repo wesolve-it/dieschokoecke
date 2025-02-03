@@ -13,7 +13,8 @@ module.exports = withMT({
         chocolateBrown: '#c6b195',
         textBrown: '#402e1e',
         bgBrown: '#f0e9e2',
-        bgGray: '#1e1e1e'
+        bgGray: '#1e1e1e',
+        valentinesPink: '#eed1d8'
       }
     },
   },
