@@ -1,5 +1,5 @@
 import React from 'react'
-import Hero from '../components/Hero';
+import ValentinesHero from '../components/ValentinesHero';
 import Products from '../components/Products';
 import About from '../components/About';
 import Features from '../components/Features';
@@ -11,7 +11,7 @@ import HeimatCoupon from '../components/HeimatCoupon';
 export default function Home({faqEntries}) {
   return (
     <>
-      <Hero />
+      <ValentinesHero />
       <Products />
       <About />
       <Features />

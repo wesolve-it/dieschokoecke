@@ -4,7 +4,7 @@ import { Element } from 'react-scroll';
 
 export default function ValentinesHero() {
   return (
-    <Element className='bg-valentinesPink text-white py-10 lg:pt-16' id="home" name="home">
+    <Element className='bg-valentinesPink text-gray-500 py-10 lg:pt-16' id="home" name="home">
       <div className='max-w-screen-xl mx-auto px-6 xl:px-0'>
       <h1 className='text-center text-4xl lg:text-8xl'>Valentinstag <span className='italic font-light font-serif'>is coming</span></h1>
       <div className='lg:flex'>
