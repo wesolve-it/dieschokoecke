@@ -10,7 +10,7 @@ export default function ValentinesHero() {
       <div className='lg:flex'>
         <div className='lg:flex-1'>
           <h2 className='text-center text-3xl font-light lg:text-8xl lg:font-extralight lg:text-right mt-6 lg:mt-10'>Eine Rose zu jeder Bestellung</h2>
-          <h3 className='text-center lg:ml-80 mt-2 lg:mt-5 font-light lg:text-right'>Bei jeder Bestellung bis 13.Februar 2025. <br></br>Teile mir einen Grußtext für Deine liebsten mit und ich liefere deine Bestellung zu deiner Herzensperson! </h3>
+          <h3 className='text-center lg:ml-80 mt-2 lg:mt-5 font-light lg:text-right'>Bei jeder Bestellung bis 13. Februar 2025. <br></br>Teile mir einen Grußtext für Deine Liebsten mit und ich liefere Deine Bestellung zu Deiner Herzensperson! </h3>
         </div>
         <div className='lg:flex-1'>
           <img src={ValentinesHeart} alt="Schokolade" className='mx-auto h-80 lg:h-auto lg:-mb-96' />
