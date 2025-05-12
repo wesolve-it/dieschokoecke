@@ -6,12 +6,12 @@ import Reviews from '../components/Reviews';
 import FAQ from '../components/FAQ';
 import CouponModal from '../components/CouponModal';
 import HeimatCoupon from '../components/HeimatCoupon';
-import MothersHero from '../components/MothersHero';
+import Hero from '../components/Hero';
 
 export default function Home({faqEntries}) {
   return (
     <>
-      <MothersHero />
+      <Hero />
       <Products />
       <About />
       <Features />
