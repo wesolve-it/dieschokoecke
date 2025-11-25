@@ -7,7 +7,7 @@ export default function Impressum() {
 
         <p>Anja Scharf<br />
         Verkauf von Schokopralinen<br />
-        H&ouml;flas 19<br />
+        Heuchlinger Hauptstraße 21<br />
         91207 Lauf a. d. Pegnitz</p>
 
         <h2>Kontakt</h2>
