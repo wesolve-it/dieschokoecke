@@ -77,7 +77,7 @@ export default function Features() {
                 <img 
                     src={Truffel} 
                     alt="Mehrere Schokoladentrüffel" 
-                    className='w-full max-w-sm lg:max-w-none h-auto object-contain drop-shadow-2xl float-feature'
+                    className='w-4/6 lg:w-full max-w-sm lg:max-w-none h-auto object-contain drop-shadow-2xl float-feature'
                 />
             </div>
           </div>
