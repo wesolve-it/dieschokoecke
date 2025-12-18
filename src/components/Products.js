@@ -66,7 +66,7 @@ export default function Products() {
                 <img 
                     src={Truffel} 
                     alt="Mehrere Trüffel in einer Auswahl" 
-                    className='w-full h-auto object-contain drop-shadow-2xl transition-transform duration-500 hover:rotate-1'
+                    className='w-5/6 mx-auto lg:w-full h-auto object-contain drop-shadow-2xl transition-transform duration-500 hover:rotate-1'
                 />
             </div>
           </div>

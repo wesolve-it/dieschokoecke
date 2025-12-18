@@ -84,7 +84,7 @@ export default function Hero() {
                         <img 
                             src={Chocolate} 
                             alt="Schokoladenauswahl" 
-                            className='w-full h-auto object-contain drop-shadow-2xl'
+                            className='w-4/6 mx-auto lg:w-full h-auto object-contain drop-shadow-2xl'
                         />
                     </div>
                     {/* Zusätzliche dekorative Elemente (z.B. fliegende Kakaobohne) */}

@@ -19,7 +19,15 @@ function App() {
   const [faqEntries, setFaqEntries] = useState([]);
 
   useEffect(() => {
-    AOS.init();
+    AOS.init({
+  offset: 120,
+  delay: 0,
+  duration: 800,
+  easing: 'ease-in-out',
+  once: true,
+  mirror: false,
+  anchorPlacement: 'top-bottom',
+});
     AOS.refresh();
   }, []);
 
@@ -34,6 +42,7 @@ function App() {
   }, [])
 
   return (
+    <div className="flex-grow overflow-x-hidden relative">
       <BrowserRouter>
       <Navigation />
         <Routes>
@@ -46,6 +55,7 @@ function App() {
         </Routes>
       <Footer />
       </BrowserRouter>
+      </div>
   );
 }
 

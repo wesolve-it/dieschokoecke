@@ -18,11 +18,6 @@
   --section-bg: #FFFFFF;
 }
 
-html, body {
-  overflow-x: hidden;
-  max-width: 100%;
-}
-
 .App {
   text-align: center;
 }
