@@ -54,7 +54,7 @@ export default function Products({products}) {
             
             {/* Telefon/WhatsApp CTA */}
             <a 
-              href="tel:IHRE_TELEFONNUMMER" 
+              href="tel:+49 174 8130465" 
               className={`px-8 py-3 text-lg font-semibold rounded-full text-white bg-[var(--cta-button-bg)] transition-all duration-300 shadow-md 
                 hover:bg-[var(--accent-color)] hover:shadow-lg`}
             >
