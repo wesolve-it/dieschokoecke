@@ -11,10 +11,17 @@ import NotFound from './pages/NotFound';
 import 'flowbite/dist/flowbite.min.js';
 import { useEffect, useState } from 'react';
 import client from './Client';
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function App() {
   const [products, setProducts] = useState([]);
   const [faqEntries, setFaqEntries] = useState([]);
+
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
 
   useEffect(() => {
     client.getEntries({ content_type: 'product'})

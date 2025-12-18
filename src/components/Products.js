@@ -1,24 +1,84 @@
-import React from 'react'
+import React from 'react';
 import Truffel from '../assets/truffel.svg';
 import { Link } from 'react-router-dom';
 
+// --- ANNAHME: Wir nutzen die Farben aus der Hero-Sektion ---
+const TEXT_COLOR = '#3E2723';     // Dunkelbraun
+const ACCENT_COLOR = '#8D6E63';   // Mittleres Braun
+const BUTTON_BG = '#6D4C41';      // Schokoladenbraun für Button
+
+// CSS Keyframes (für Floating-Effekt, wenn nicht global definiert)
+const customStyles = `
+  @keyframes float-truffle-products {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(-1deg); }
+  }
+  .float-truffle-products { animation: float-truffle-products 6s ease-in-out infinite; }
+`;
+
+
 export default function Products() {
   return (
-    <div className='max-w-screen-xl mx-auto px-6 xl:px-0 mt-12 xl:mt-0'>
-      <div className='lg:mt-24 lg:flex-row-reverse lg:flex'>
-        <div className='lg:flex-1 lg:my-auto'>
-          <h2 className='text-4xl text-center mb-6 lg:text-6xl lg:text-left font-extralight leading-snug'>Handwerkliche Qualität <span className='text-xl lg:text-3xl'>bis</span> <span className='font-serif'>ins Detail</span></h2>
-          <p className='mb-6 leading-7 font-light'>Belgische Kakao-Trüffel unsere Gaumenschmeichler und Geheimtipp für Geburtstage, als Geschenke für gute Kunden, oder sich selbst zu beschenken. Verpackt im Geschenkkarton oder im Organzasäckchen.</p>
-          <section className='text-center'>
-            <Link to="Produkte">
-              <button className='rounded-full py-2 px-4 bg-chocolateBrown text-textBrown font-light uppercase'>Entdecke unsere Schokolade</button>
-            </Link>
-          </section>
+    <>
+      <style>{customStyles}</style>
+      
+      <div className={`max-w-screen-xl mx-auto px-6 xl:px-0 mt-16 lg:mt-32 pb-16 relative text-[var(--text-color)]`}>
+        
+        {/* Dekorativer Akzent: Goldene Plakette / Schimmer */}
+        <div 
+          className={`absolute top-0 left-1/2 transform -translate-x-1/2 w-48 h-48 lg:w-64 lg:h-64 bg-gradient-to-br from-[#D4C1A5]/60 to-transparent rounded-full blur-3xl opacity-50`}
+          data-aos="zoom-in" data-aos-duration="1200"
+        ></div>
+
+        <div className='lg:flex lg:flex-row-reverse lg:items-center relative z-10'>
+          
+          {/* TEXT-Sektion (Flex-1) */}
+          <div className='lg:flex-1 lg:my-auto lg:pl-16 order-2' data-aos="fade-left" data-aos-duration="1000">
+            
+            <h2 className={`text-4xl text-center mb-6 lg:text-6xl lg:text-left font-extralight leading-snug text-[#4E342E]`}>
+              Handwerkliche Qualität <span className='text-xl lg:text-3xl font-light'>bis</span> 
+              <span className={`font-serif italic text-[var(--accent-color)] font-normal ml-2`}>ins Detail</span>
+            </h2>
+            
+            <p className='mb-8 leading-relaxed font-light text-lg text-center lg:text-left'>
+              Unsere <span className='font-semibold'>belgischen Kakao-Trüffel</span> sind wahre Gaumenschmeichler und der perfekte Geheimtipp für besondere Anlässe: ob zum Geburtstag, als elegantes Geschenk für gute Kunden oder einfach, um sich selbst zu beschenken.
+            </p>
+            
+            <p className='mb-6 leading-relaxed font-light text-base text-center lg:text-left text-[var(--text-color)]/80'>
+              Wählen Sie zwischen stilvollen Geschenkkartons oder einem liebevoll verpackten Organzasäckchen.
+            </p>
+
+            {/* Call-to-Action Button */}
+            <section className='text-center lg:text-left pt-4'>
+              <Link to="Produkte">
+                <button 
+                  className={`relative rounded-full py-3 px-8 bg-[var(--button-bg)] text-white font-medium uppercase tracking-wider transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-[1.03]
+                  group overflow-hidden`}
+                >
+                  <span className='relative z-10'>Sortiment entdecken</span>
+                  {/* Micro-Interaction: Subtiler Licht-Wisch-Effekt beim Hover */}
+                  <span className='absolute inset-0 block bg-white opacity-0 group-hover:opacity-[0.05] transition-opacity duration-300'></span>
+                  <span className='absolute inset-0 block bg-gradient-to-r from-transparent via-white/50 to-transparent w-full h-full transform -skew-x-12 -translate-x-full transition-transform duration-500 group-hover:translate-x-full'></span>
+                </button>
+              </Link>
+            </section>
+            
+          </div>
+
+          {/* BILD-Sektion (Flex-1) */}
+          <div className='lg:flex-1 order-1 mt-10 lg:mt-0' data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
+            {/* Bild mit Floating-Animation und starkem Schatten */}
+            <div className='float-truffle-products max-w-lg mx-auto lg:max-w-none'>
+                <img 
+                    src={Truffel} 
+                    alt="Mehrere Trüffel in einer Auswahl" 
+                    className='w-full h-auto object-contain drop-shadow-2xl transition-transform duration-500 hover:rotate-1'
+                />
+            </div>
+          </div>
+          
         </div>
-      <div className='lg:flex-1'>
-        <img src={Truffel} alt="Trüffel" className='lg:h-auto lg:mr-20 lg:shadow-l' />
       </div>
-      </div>
-    </div>
-  )
+    </>
+  );
 }

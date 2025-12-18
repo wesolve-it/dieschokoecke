@@ -1,26 +1,90 @@
-import React from 'react'
+import React from 'react';
+
+// --- FARBEN (Konsistent mit den anderen Komponenten) ---
+const TEXT_COLOR = '#3E2723';     // Dunkelbraun
+const ACCENT_COLOR = '#795548';   // Akzent-Braun
+const LIGHT_BG = '#FDFCFB';       // Sehr helles, fast weißes Creme
 
 export default function Impressum() {
   return (
-    <div className='max-w-screen-xl mx-auto py-12'>
-        <h1>Impressum</h1>
+    <div className={`bg-[${LIGHT_BG}] py-16 lg:py-24 text-[${TEXT_COLOR}]`} data-aos="fade-in" data-aos-duration="800">
+      <div className='max-w-screen-xl mx-auto px-6 xl:px-0'>
+        
+        {/* --- Haupt-Überschrift --- */}
+        <h1 className={`text-5xl lg:text-6xl font-serif italic text-[${ACCENT_COLOR}] mb-10 border-b-2 border-[${ACCENT_COLOR}]/30 pb-4`}>
+            Impressum
+        </h1>
 
-        <p>Anja Scharf<br />
-        Verkauf von Schokopralinen<br />
-        Heuchlinger Hauptstraße 21<br />
-        91207 Lauf a. d. Pegnitz</p>
+        {/* --- 1. Allgemeine Angaben --- */}
+        <section className='mb-10 p-6 rounded-xl bg-white shadow-lg'>
+          <h2 className={`text-2xl font-semibold mb-4 border-l-4 border-[${ACCENT_COLOR}] pl-3`}>
+            Verantwortlich für den Inhalt
+          </h2>
+          <div className='text-lg font-light leading-relaxed'>
+            <p className='mb-1'>Anja Scharf</p>
+            <p className='mb-1'>Verkauf von Schokopralinen</p>
+            <p className='mb-1'>Heuchlinger Hauptstraße 21</p>
+            <p>91207 Lauf a. d. Pegnitz</p>
+          </div>
+        </section>
 
-        <h2>Kontakt</h2>
-        <p>Telefon: +49 174  8130465<br />
-        E-Mail: kontakt@dieschokoecke.de</p>
+        {/* --- 2. Kontakt --- */}
+        <section className='mb-10 p-6 rounded-xl bg-white shadow-lg'>
+          <h2 className={`text-2xl font-semibold mb-4 border-l-4 border-[${ACCENT_COLOR}] pl-3`}>
+            Kontakt
+          </h2>
+          <div className='text-lg font-light leading-relaxed'>
+            <p className='mb-1'>
+                Telefon: 
+                <a href="tel:+491748130465" className={`ml-2 text-[${ACCENT_COLOR}] hover:underline`}>
+                    +49 174 8130465
+                </a>
+            </p>
+            <p>
+                E-Mail: 
+                <a href="mailto:kontakt@dieschokoecke.de" className={`ml-2 text-[${ACCENT_COLOR}] hover:underline`}>
+                    kontakt@dieschokoecke.de
+                </a>
+            </p>
+          </div>
+        </section>
 
-        <h2>EU-Streitschlichtung</h2>
-        <p>Die Europ&auml;ische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener noreferrer">https://ec.europa.eu/consumers/odr/</a>.<br /> Unsere E-Mail-Adresse finden Sie oben im Impressum.</p>
+        {/* --- 3. Rechtliche Hinweise (Grid oder Container) --- */}
+        <div className='grid lg:grid-cols-2 gap-8'>
+            <section className='p-6 rounded-xl bg-white shadow-lg'>
+                <h2 className={`text-xl font-semibold mb-3 border-l-4 border-[${ACCENT_COLOR}]/50 pl-3`}>
+                    EU-Streitschlichtung
+                </h2>
+                <p className='font-light leading-relaxed text-base'>
+                    Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: 
+                    <a 
+                        href="https://ec.europa.eu/consumers/odr/" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className={`block mt-2 text-[${ACCENT_COLOR}] hover:underline font-normal`}
+                    >
+                        https://ec.europa.eu/consumers/odr/
+                    </a>
+                    <br /> Unsere E-Mail-Adresse finden Sie oben im Impressum.
+                </p>
+            </section>
 
-        <h2>Verbraucher&shy;streit&shy;beilegung/Universal&shy;schlichtungs&shy;stelle</h2>
-        <p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+            <section className='p-6 rounded-xl bg-white shadow-lg'>
+                <h2 className={`text-xl font-semibold mb-3 border-l-4 border-[${ACCENT_COLOR}]/50 pl-3`}>
+                    Verbraucherstreitbeilegung
+                </h2>
+                <p className='font-light leading-relaxed text-base'>
+                    Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
+                </p>
+            </section>
+        </div>
 
-        <p>Quelle: <a href="https://www.e-recht24.de/impressum-generator.html">https://www.e-recht24.de/impressum-generator.html</a></p>
+        {/* --- Quelle --- */}
+        <p className='mt-12 text-sm text-gray-500 font-light text-center'>
+            Quelle: <a href="https://www.e-recht24.de/impressum-generator.html" className='hover:underline'>e-recht24.de Impressum Generator</a>
+        </p>
+
+      </div>
     </div>
   )
 }

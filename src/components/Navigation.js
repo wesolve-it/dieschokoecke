@@ -1,103 +1,136 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react';
 import Logo from '../assets/FullLogo_Transparent_NoBuffer.png';
-import { NavLink } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
+
+// --- FARBEN ---
+const TEXT_COLOR = '#3E2723';
+const ACCENT_COLOR = '#795548';
+const HEADER_BG = '#FFFFFF';
+const CTA_BUTTON_BG = '#6D4C41';
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const navigate = useNavigate()
+  const [isScrolled, setIsScrolled] = useState(false);
+  const navigate = useNavigate();
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  }
+  // --- SCROLL-EFFEKT LOGIK ---
+  useEffect(() => {
+    const handleScroll = () => {
+      // Wenn mehr als 50px gescrollt wurde, wird isScrolled true
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
 
-  const handleScrollToAbout = () => {
-    // Navigiere zur Home-Seite
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
+  const handleScrollToSection = (sectionId) => {
+    setIsMenuOpen(false);
     navigate('/');
-
-    // Zeitverzögerung, um sicherzustellen, dass die Home-Seite und About-Komponente gerendert sind
     setTimeout(() => {
-      const aboutSection = document.getElementById('about');
-      if (aboutSection) {
+      const section = document.getElementById(sectionId);
+      if (section) {
+        const offset = isScrolled ? 70 : 90; // Anpassung an die Header-Höhe
         window.scrollTo({
-          top: aboutSection.offsetTop,
+          top: section.offsetTop - offset,
           behavior: 'smooth'
         });
       }
-    }, 300); // Die Verzögerung kann je nach Ladezeit der Seite angepasst werden
+    }, 300);
   };
-
-  const handleScrollToHome = () => {
-    // Navigiere zur Home-Seite
-    navigate('/');
-
-    // Zeitverzögerung, um sicherzustellen, dass die Home-Seite und About-Komponente gerendert sind
-    setTimeout(() => {
-      const homeSection = document.getElementById('home');
-      if (homeSection) {
-        window.scrollTo({
-          top: homeSection.offsetTop,
-          behavior: 'smooth'
-        });
-      }
-    }, 300); // Die Verzögerung kann je nach Ladezeit der Seite angepasst werden
-  };
-
-  const handleScrollToFAQ = () => {
-    // Navigiere zur Home-Seite
-    navigate('/');
-
-    // Zeitverzögerung, um sicherzustellen, dass die Home-Seite und About-Komponente gerendert sind
-    setTimeout(() => {
-      const faqSection = document.getElementById('faq');
-      if (faqSection) {
-        window.scrollTo({
-          top: faqSection.offsetTop,
-          behavior: 'smooth'
-        });
-      }
-    }, 300); // Die Verzögerung kann je nach Ladezeit der Seite angepasst werden
-  };
-
-
 
   return (
-    <nav className="bg-white border-gray-200 dark:bg-gray-900">
-  <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-    <NavLink to="/" className="flex items-center space-x-3 rtl:space-x-reverse">
-        <img src={Logo} className="h-14" alt="dieschokoecke Logo" />
-    </NavLink>
+    <nav 
+      className={`fixed w-full top-0 z-50 transition-all duration-500 ease-in-out
+        ${isScrolled 
+          ? `bg-[${HEADER_BG}]/F0 backdrop-blur-md py-2 shadow-xl` // Schlanker & Glas-Effekt
+          : `bg-[${HEADER_BG}] py-5 shadow-sm` // Luftiger & Dezenter
+        }`}
+    >
+      <div className="max-w-screen-xl flex items-center justify-between mx-auto px-6">
+        
+        {/* --- Logo: Skaliert beim Scrollen --- */}
+        <NavLink to="/" onClick={() => handleScrollToSection('home')} className="flex items-center group">
+            <img 
+                src={Logo} 
+                className={`transition-all duration-500 object-contain ${isScrolled ? 'h-10' : 'h-12 lg:h-14'}`} 
+                alt="dieschokoecke Logo" 
+            />
+        </NavLink>
+
+        {/* --- Mobile Hamburger Button (Kein blauer Rahmen mehr!) --- */}
         <button
           onClick={toggleMenu}
           type="button"
-          className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-          aria-controls="navbar-default"
-          aria-expanded={isMenuOpen ? 'true' : 'false'}>
-        <span className="sr-only">Open main menu</span>
-        <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-            <path stroke="currentColor" strokeLinecap= "round" strokeLinejoin="round" strokeWidth="2" d="M1 1h15M1 7h15M1 13h15"/>
-        </svg>
-    </button>
-    <div className={`${isMenuOpen ? 'block' : 'hidden'} w-full md:block md:w-auto`} id="navbar-default">
-      <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-        <li>
-          <button onClick={handleScrollToHome} className="block py-2 px-3 text-gray-900 rounded md:bg-transparent md:hover:text-brown-500 md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">Home</button>
-        </li>
-        <li>
-          <button onClick={handleScrollToAbout} className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-brown-500 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Über uns</button>
-        </li>
-        <li>
-          <NavLink to="produkte" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-brown-500 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Produkte</NavLink>
-        </li>
-        <li>
-          <button onClick={handleScrollToFAQ} className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-brown-500 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">FAQ</button>
-        </li>
-        <li className='bg-chocolateBrown text-textBrown rounded-full p-1 md:px-4 md:-mt-1 px-0'>
-          <NavLink to="kontakt" className="block py-2 px-3 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-brown-500 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Kontakt</NavLink>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-  )
+          className={`inline-flex items-center p-2 w-10 h-10 justify-center text-[${TEXT_COLOR}] 
+                     rounded-lg md:hidden hover:bg-[${ACCENT_COLOR}]/10 focus:outline-none transition-colors`}
+        >
+          <span className="sr-only">Menü</span>
+          <div className="relative w-6 h-5">
+            {/* Animierte Hamburger-Linien */}
+            <span className={`absolute block h-0.5 w-6 bg-current transition-all duration-300 ${isMenuOpen ? 'rotate-45 top-2' : 'top-0'}`}></span>
+            <span className={`absolute block h-0.5 w-6 bg-current transition-all duration-300 top-2 ${isMenuOpen ? 'opacity-0' : 'opacity-100'}`}></span>
+            <span className={`absolute block h-0.5 w-6 bg-current transition-all duration-300 ${isMenuOpen ? '-rotate-45 top-2' : 'top-4'}`}></span>
+          </div>
+        </button>
+
+        {/* --- Navigationslinks --- */}
+        <div className={`
+          ${isMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0 md:translate-y-0 md:opacity-100'}
+          absolute md:relative top-full left-0 w-full md:top-auto md:w-auto transition-all duration-500 ease-in-out
+          bg-white md:bg-transparent shadow-2xl md:shadow-none z-[-1] md:z-auto
+        `}>
+          <ul className="flex flex-col md:flex-row items-center p-8 md:p-0 md:space-x-8 font-light text-lg">
+            
+            {/* Links mit Hover-Underline-Effekt */}
+            {[{ label: 'Home', id: 'home' }, { label: 'Über uns', id: 'about' }, { label: 'FAQ', id: 'faq' }].map(item => (
+              <li key={item.id} className='w-full md:w-auto text-center mb-4 md:mb-0'>
+                <button
+                  onClick={() => handleScrollToSection(item.id)}
+                  className={`relative py-2 md:py-0 text-[${TEXT_COLOR}] transition-colors group overflow-hidden`}
+                >
+                  {item.label}
+                  <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-[${ACCENT_COLOR}] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300`}></span>
+                </button>
+              </li>
+            ))}
+            
+            <li className='w-full md:w-auto text-center mb-4 md:mb-0'>
+              <NavLink 
+                to="produkte" 
+                onClick={() => setIsMenuOpen(false)}
+                className={({ isActive }) => `relative py-2 md:py-0 transition-colors group
+                  ${isActive ? `text-[${ACCENT_COLOR}] font-medium` : `text-[${TEXT_COLOR}]`}`}
+              >
+                Produkte
+                <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-[${ACCENT_COLOR}] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300`}></span>
+              </NavLink>
+            </li>
+
+            {/* --- CTA-Button --- */}
+            <li className='w-full md:w-auto'>
+              <NavLink 
+                to="kontakt" 
+                onClick={() => setIsMenuOpen(false)}
+                className={`
+                  inline-flex items-center justify-center px-8 py-2.5 rounded-full text-white
+                  bg-[${CTA_BUTTON_BG}] transition-all duration-300 shadow-md 
+                  hover:bg-[${TEXT_COLOR}] hover:shadow-xl hover:scale-105 active:scale-95
+                  text-base font-semibold w-full md:w-auto
+                `}
+              >
+                Kontakt aufnehmen
+              </NavLink>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  );
 }

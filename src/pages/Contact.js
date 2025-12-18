@@ -1,42 +1,136 @@
-import React from 'react'
+import React from 'react';
+
+// --- FARBEN (Konsistent mit den anderen Komponenten) ---
+const TEXT_COLOR = '#3E2723';     // Dunkelbraun für Text
+const ACCENT_COLOR = '#795548';   // Akzent-Braun für Fokus/Ränder
+const LIGHT_BG = '#FDFCFB';       // Sehr helles, fast weißes Creme für den Hintergrund
+const FORM_BG = '#FFFFFF';        // Reines Weiß für den Formular-Container
+const CTA_BUTTON_BG = '#6D4C41';  // Sattes Schokoladenbraun für den Button
 
 export default function Contact() {
   const handleSubmit = (event) => {
     event.preventDefault(); // Verhindert das Standardformularverhalten
-    const form = event.target; // Zugriff auf das aktuelle Formular
-    const data = new FormData(form); // Erstellen von FormData aus dem Formular
+    const form = event.target;
+    const data = new FormData(form);
 
+    // Netlify Form Submission
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(data).toString(), // Umwandeln in URLSearchParams
+      body: new URLSearchParams(data).toString(),
     })
-      .then(() => alert("Formular erfolgreich gesendet!")) // Erfolgsnachricht
-      .catch((error) => alert("Fehler beim Senden des Formulars", error)); // Fehlerbehandlung
+      .then(() => alert("Ihre Nachricht wurde erfolgreich gesendet. Wir melden uns in Kürze bei Ihnen!"))
+      .catch((error) => alert("Beim Senden des Formulars ist ein Fehler aufgetreten: ", error));
   };
 
   return (
-    <section className="bg-white dark:bg-gray-900 mb-10">
-  <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
-      <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">Kontaktiere uns</h2>
-      <p className="mb-8 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl">Haben Sie ein technisches Problem? Möchten Sie Feedback zu einer Beta-Funktion senden? Benötigen Sie Details zu unserem Businessplan? Lassen Sie es uns wissen.</p>
-      <form name="contact" method='POST' data-netlify="true" className="space-y-8" onSubmit={handleSubmit}>
-        <input type='hidden' name="form-name" value="contact" />
-          <div>
-              <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Email</label>
-              <input type="email" id="email" className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="name@adresse.com" name="Email" required />
-          </div>
-          <div>
-              <label htmlFor="subject" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Betreff</label>
-              <input type="text" id="subject" className="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="Lass uns wissen, wie wir Dir helfen können" required name="Betreff" />
-          </div>
-          <div className="sm:col-span-2">
-              <label htmlFor="message" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Nachricht</label>
-              <textarea id="message" rows="6" className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Schreibe hier, was du bestellen, oder uns mitteilen möchtest..." required name="Nachricht"></textarea>
-          </div>
-          <button type="submit" className="py-3 px-5 text-sm text-center text-textBrown rounded-lg bg-bgBrown sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Nachricht senden</button>
-      </form>
-  </div>
-</section>
+    // Hintergrundsektion
+    <section 
+        id="kontakt"
+        className={`bg-[var(--light-bg)] py-16 lg:py-24 text-[var(--text-color)]`}
+        data-aos="fade-in" 
+        data-aos-duration="800"
+    >
+        <div className="mx-auto max-w-screen-xl px-6 xl:px-0 pt-[80px] lg:pt-[90px]">
+            
+            {/* --- Titel und Einleitung --- */}
+            <header className="mb-12 lg:mb-16 max-w-3xl mx-auto text-center">
+                <h2 className={`text-5xl lg:text-6xl font-serif italic mb-4 text-[var(--accent-color)]`}>
+                    Kontakt & Bestellung
+                </h2>
+                <p className={`font-light text-xl text-[var(--text-color)]/80`}>
+                    Gerne nehmen wir Ihre individuelle Bestellung entgegen oder beantworten Ihre Fragen. Bitte füllen Sie das Formular aus – wir melden uns umgehend bei Ihnen.
+                </p>
+            </header>
+            
+            {/* --- Formular-Container --- */}
+            <div className={`mx-auto max-w-3xl p-8 lg:p-12 rounded-xl bg-[var(--form-bg)] shadow-2xl`}>
+
+                <form 
+                    name="contact" 
+                    method='POST' 
+                    data-netlify="true" 
+                    className="space-y-6" 
+                    onSubmit={handleSubmit}
+                >
+                    {/* Wichtig für Netlify: Hidden Field */}
+                    <input type='hidden' name="form-name" value="contact" />
+                    
+                    {/* Name */}
+                    <div>
+                        <label htmlFor="name" className={`block mb-2 text-base font-semibold text-[var(--text-color)]`}>Ihr Name</label>
+                        <input 
+                            type="text" 
+                            id="name" 
+                            name="Name" 
+                            className={`block w-full p-3 text-base rounded-lg border-2 border-gray-200 
+                                       focus:ring-[var(--accent-color)] focus:border-[var(--accent-color)] 
+                                       transition-all duration-200`} 
+                            placeholder="Vorname Nachname" 
+                            required 
+                        />
+                    </div>
+
+                    {/* Email */}
+                    <div>
+                        <label htmlFor="email" className={`block mb-2 text-base font-semibold text-[var(--text-color)]`}>E-Mail-Adresse</label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="Email" 
+                            className={`block w-full p-3 text-base rounded-lg border-2 border-gray-200 
+                                       focus:ring-[var(--accent-color)] focus:border-[var(--accent-color)] 
+                                       transition-all duration-200`} 
+                            placeholder="name@adresse.com" 
+                            required 
+                        />
+                    </div>
+                    
+                    {/* Betreff */}
+                    <div>
+                        <label htmlFor="subject" className={`block mb-2 text-base font-semibold text-[var(--text-color)]`}>Betreff / Anliegen</label>
+                        <input 
+                            type="text" 
+                            id="subject" 
+                            name="Betreff" 
+                            className={`block w-full p-3 text-base rounded-lg border-2 border-gray-200 
+                                       focus:ring-[var(--accent-color)] focus:border-[var(--accent-color)] 
+                                       transition-all duration-200`} 
+                            placeholder="z.B. Bestellung, Geschäftsanfrage oder Rückfrage" 
+                            required 
+                        />
+                    </div>
+                    
+                    {/* Nachricht */}
+                    <div>
+                        <label htmlFor="message" className={`block mb-2 text-base font-semibold text-[var(--text-color)]`}>Ihre Nachricht (oder Bestellung)</label>
+                        <textarea 
+                            id="message" 
+                            rows="6" 
+                            name="Nachricht" 
+                            className={`block w-full p-3 text-base rounded-lg border-2 border-gray-200 
+                                       focus:ring-[var(--accent-color)] focus:border-[var(--accent-color)] 
+                                       transition-all duration-200`} 
+                            placeholder="Bitte beschreiben Sie hier Ihre Bestellung oder Ihr Anliegen..." 
+                            required
+                        ></textarea>
+                    </div>
+
+                    {/* Submit Button */}
+                    <button 
+                        type="submit" 
+                        className={`mt-4 w-full sm:w-auto py-3 px-8 text-lg font-semibold 
+                                   text-white rounded-full bg-[var(--cta-button-bg)] 
+                                   transition-all duration-300 shadow-xl 
+                                   hover:bg-[var(--accent-color)] hover:scale-[1.02] 
+                                   focus:ring-4 focus:ring-[var(--accent-color)]/50`}
+                    >
+                        Nachricht senden
+                    </button>
+                    
+                </form>
+            </div>
+        </div>
+    </section>
   )
 }
