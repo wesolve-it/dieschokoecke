@@ -61,7 +61,7 @@ export default function Features() {
                             </div>
                             <div className='ml-4'>
                                 <h3 className='text-xl font-bold mb-1 group-hover:text-[var(--accent-color)] transition-colors duration-300'>{feature.title}</h3>
-                                <p className='font-light leading-relaxed text-[${TEXT_COLOR}]/90'>{feature.description}</p>
+                                <p className='font-light leading-relaxed text-[var(--text-color)]/90'>{feature.description}</p>
                             </div>
                         </div>
                     </section>

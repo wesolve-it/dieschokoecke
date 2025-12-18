@@ -1,12 +1,4 @@
-import React from 'react';
 import Product from '../components/Product';
-
-// --- FARBEN (Konsistent mit den anderen Komponenten) ---
-const TEXT_COLOR = '#3E2723';     // Dunkelbraun
-const ACCENT_COLOR = '#795548';   // Akzent-Braun
-const LIGHT_BG = '#FDFCFB';       // Sehr helles, fast weißes Creme
-const CTA_BG = '#EAE0D7';         // Helles Creme-Braun für den CTA-Hintergrund
-const CTA_BUTTON_BG = '#6D4C41';  // Schokoladenbraun für den Button
 
 export default function Products({products}) {
   return (
