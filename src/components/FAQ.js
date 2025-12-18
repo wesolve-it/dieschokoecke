@@ -20,7 +20,7 @@ export function ContactCTA() {
             Ob individuelle Wünsche oder Details zu unseren Pralinen – wir sind gerne für Sie da.
           </p>
           <a 
-            href="#contact" 
+            href="kontakt" 
             className={`inline-block px-10 py-4 rounded-full font-semibold text-white bg-[var(--accent-color)] shadow-lg transition-all duration-300 hover:bg-[var(--text-color)] hover:scale-105`}
           >
             Jetzt Kontakt aufnehmen

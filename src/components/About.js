@@ -136,7 +136,7 @@ export default function About() {
                                         Ich freue mich auf Sie! <br/> Ihre Anja Scharf
                                     </p>
                                     <a 
-                                        href="tel:IHRE_TELEFONNUMMER" 
+                                        href="tel:+49 174 8130465" 
                                         onClick={handleContactClick}
                                         className={`mt-4 inline-block text-lg font-semibold border-b border-transparent hover:border-[var(--accent-color)] text-[#6D4C41] hover:text-black transition-all duration-300 
                                             ${isContactClicked ? `ring-4 ring-[var(--shine-color)] ring-offset-2 rounded-md` : ''}`}

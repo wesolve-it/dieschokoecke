@@ -87,7 +87,7 @@ export default function Reviews() {
             
             {/* Optional: CTA am Ende der Reviews */}
             <div className='text-center mt-16'>
-                <a href="#Produkte" className={`px-8 py-3 bg-white border-2 border-[var(--accent-color)] text-[var(--accent-color)] rounded-full font-medium hover:bg-[var(--accent-color)] hover:text-white transition-all duration-300 shadow-md`}>
+                <a href="produkte" className={`px-8 py-3 bg-white border-2 border-[var(--accent-color)] text-[var(--accent-color)] rounded-full font-medium hover:bg-[var(--accent-color)] hover:text-white transition-all duration-300 shadow-md`}>
                     Jetzt selbst überzeugen
                 </a>
             </div>
