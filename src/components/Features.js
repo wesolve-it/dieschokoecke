@@ -1,13 +1,7 @@
-import React from 'react';
 import Cake from '../assets/cake.svg';
 import Coffee from '../assets/coffee.svg';
 import Acorn from '../assets/acorn.svg';
 import Truffel from '../assets/FeaturesTruffel.svg';
-
-// --- ANNAHME: Wir nutzen die Farben aus den vorherigen Komponenten ---
-const TEXT_COLOR = '#3E2723';     // Dunkelbraun
-const ACCENT_COLOR = '#795548';   // Akzent-Braun
-const LIGHT_BG = '#F8F4F2';       // Sehr helles Grau-Beige (als Hintergrund)
 
 // CSS Keyframes (für Floating-Effekt und Icon-Glühen)
 const customStyles = `

@@ -1,15 +1,9 @@
-import React from 'react';
-
-// --- FARBEN (Konsistent mit den anderen Komponenten) ---
-const TEXT_COLOR = '#3E2723';     // Dunkelbraun
 const ACCENT_COLOR = '#795548';   // Akzent-Braun
-const LIGHT_BG = '#FDFCFB';       // Sehr helles, fast weißes Creme
-const SECTION_BG = '#FFFFFF';     // Reines Weiß für innere Sektionen
 
 // Hilfskomponente zum Formatieren von Sektionen
 const Section = ({ id, title, children }) => (
     <section id={id} className='mb-12 p-6 rounded-xl bg-white shadow-lg'>
-        <h2 className={`text-3xl font-semibold mb-6 border-l-4 border-[${ACCENT_COLOR}] pl-3`}>
+        <h2 className={`text-3xl font-semibold mb-6 border-l-4 border-[var(--accent-color)] pl-3`}>
             {title}
         </h2>
         <div className='text-lg font-light leading-relaxed space-y-4'>
@@ -20,25 +14,25 @@ const Section = ({ id, title, children }) => (
 
 // Hilfsfunktion zum Rendern des Inhaltsverzeichnisses
 const renderTableOfContents = (ACCENT_COLOR) => (
-    <div className={`mb-12 p-6 rounded-xl bg-[${SECTION_BG}] shadow-lg border-l-4 border-r-4 border-[${ACCENT_COLOR}]/50`}>
-        <h2 className={`text-3xl font-semibold mb-4 text-[${TEXT_COLOR}]`}>Inhaltsübersicht</h2>
+    <div className={`mb-12 p-6 rounded-xl bg-[var(--section-bg)] shadow-lg border-l-4 border-r-4 border-[var(--accent-color)]/50`}>
+        <h2 className={`text-3xl font-semibold mb-4 text-[var(--text-color)]`}>Inhaltsübersicht</h2>
         <ul className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 font-light text-base leading-relaxed'>
             {/* Die Links verwenden die IDs aus Ihrem ursprünglichen Dokument */}
-            <li><a href="#m4158" className={`hover:text-[${ACCENT_COLOR}] transition-colors`}>Präambel</a></li>
-            <li><a href="#m3" className={`hover:text-[${ACCENT_COLOR}] transition-colors`}>Verantwortlicher</a></li>
-            <li><a href="#mOverview" className={`hover:text-[${ACCENT_COLOR}] transition-colors`}>Übersicht der Verarbeitungen</a></li>
-            <li><a href="#m2427" className={`hover:text-[${ACCENT_COLOR}] transition-colors`}>Maßgebliche Rechtsgrundlagen</a></li>
-            <li><a href="#m27" className={`hover:text-[${ACCENT_COLOR}] transition-colors`}>Sicherheitsmaßnahmen</a></li>
-            <li><a href="#m25" className={`hover:text-[${ACCENT_COLOR}] transition-colors`}>Übermittlung von Daten</a></li>
-            <li><a href="#m12" className={`hover:text-[${ACCENT_COLOR}] transition-colors`}>Datenspeicherung und Löschung</a></li>
-            <li><a href="#m10" className={`hover:text-[${ACCENT_COLOR}] transition-colors`}>Rechte der betroffenen Personen</a></li>
-            <li><a href="#m317" className={`hover:text-[${ACCENT_COLOR}] transition-colors`}>Geschäftliche Leistungen</a></li>
-            <li><a href="#m225" className={`hover:text-[${ACCENT_COLOR}] transition-colors`}>Webhosting</a></li>
-            <li><a href="#m134" className={`hover:text-[${ACCENT_COLOR}] transition-colors`}>Einsatz von Cookies</a></li>
-            <li><a href="#m182" className={`hover:text-[${ACCENT_COLOR}] transition-colors`}>Kontakt- und Anfrageverwaltung</a></li>
-            <li><a href="#m136" className={`hover:text-[${ACCENT_COLOR}] transition-colors`}>Präsenzen in sozialen Netzwerken</a></li>
-            <li><a href="#m328" className={`hover:text-[${ACCENT_COLOR}] transition-colors`}>Plug-ins und eingebettete Inhalte</a></li>
-            <li><a href="#m15" className={`hover:text-[${ACCENT_COLOR}] transition-colors`}>Änderung und Aktualisierung</a></li>
+            <li><a href="#m4158" className={`hover:text-[var(--accent-color)] transition-colors`}>Präambel</a></li>
+            <li><a href="#m3" className={`hover:text-[var(--accent-color)] transition-colors`}>Verantwortlicher</a></li>
+            <li><a href="#mOverview" className={`hover:text-[var(--accent-color)] transition-colors`}>Übersicht der Verarbeitungen</a></li>
+            <li><a href="#m2427" className={`hover:text-[var(--accent-color)] transition-colors`}>Maßgebliche Rechtsgrundlagen</a></li>
+            <li><a href="#m27" className={`hover:text-[var(--accent-color)] transition-colors`}>Sicherheitsmaßnahmen</a></li>
+            <li><a href="#m25" className={`hover:text-[var(--accent-color)] transition-colors`}>Übermittlung von Daten</a></li>
+            <li><a href="#m12" className={`hover:text-[var(--accent-color)] transition-colors`}>Datenspeicherung und Löschung</a></li>
+            <li><a href="#m10" className={`hover:text-[var(--accent-color)] transition-colors`}>Rechte der betroffenen Personen</a></li>
+            <li><a href="#m317" className={`hover:text-[var(--accent-color)] transition-colors`}>Geschäftliche Leistungen</a></li>
+            <li><a href="#m225" className={`hover:text-[var(--accent-color)] transition-colors`}>Webhosting</a></li>
+            <li><a href="#m134" className={`hover:text-[var(--accent-color)] transition-colors`}>Einsatz von Cookies</a></li>
+            <li><a href="#m182" className={`hover:text-[var(--accent-color)] transition-colors`}>Kontakt- und Anfrageverwaltung</a></li>
+            <li><a href="#m136" className={`hover:text-[var(--accent-color)] transition-colors`}>Präsenzen in sozialen Netzwerken</a></li>
+            <li><a href="#m328" className={`hover:text-[var(--accent-color)] transition-colors`}>Plug-ins und eingebettete Inhalte</a></li>
+            <li><a href="#m15" className={`hover:text-[var(--accent-color)] transition-colors`}>Änderung und Aktualisierung</a></li>
         </ul>
     </div>
 );
@@ -46,11 +40,11 @@ const renderTableOfContents = (ACCENT_COLOR) => (
 
 export default function Privacy() {
     return (
-        <div className={`bg-[${LIGHT_BG}] py-16 lg:py-24 text-[${TEXT_COLOR}]`} data-aos="fade-in" data-aos-duration="800">
+        <div className={`bg-[var(--light-bg)] py-16 lg:py-24 text-[var(--text-color)]`} data-aos="fade-in" data-aos-duration="800">
             <div className='max-w-screen-xl mx-auto px-6 xl:px-0'>
 
                 {/* --- Haupt-Überschrift --- */}
-                <h1 className={`text-5xl lg:text-6xl font-serif italic text-[${ACCENT_COLOR}] mb-10 border-b-2 border-[${ACCENT_COLOR}]/30 pb-4`}>
+                <h1 className={`text-5xl lg:text-6xl font-serif italic text-[var(--accent-color)] mb-10 border-b-2 border-[var(--accent-color)]/30 pb-4 pt-20 break-all`}>
                     Datenschutzerklärung
                 </h1>
 
@@ -67,27 +61,27 @@ export default function Privacy() {
                 {/* --- Verantwortlicher --- */}
                 <Section id="m3" title="Verantwortlicher">
                     <p>Anja, Scharf / dieschokoecke<br/>Höflas, 19<br/>91207, Lauf a.d. Pegnitz, Deutschland</p>
-                    <p>E-Mail-Adresse: <a href="mailto:kontakt@dieschokoecke.de" className={`text-[${ACCENT_COLOR}] hover:underline`}>kontakt@dieschokoecke.de</a></p>
+                    <p>E-Mail-Adresse: <a href="mailto:kontakt@dieschokoecke.de" className={`text-[var(--accent-color)] hover:underline`}>kontakt@dieschokoecke.de</a></p>
                 </Section>
 
                 {/* --- Übersicht der Verarbeitungen --- */}
                 <Section id="mOverview" title="Übersicht der Verarbeitungen">
                     <p>Die nachfolgende Übersicht fasst die Arten der verarbeiteten Daten und die Zwecke ihrer Verarbeitung zusammen und verweist auf die betroffenen Personen.</p>
                     
-                    <h3 className={`text-xl font-semibold mb-3 mt-6 border-b border-[${ACCENT_COLOR}]/30 pb-1`}>Arten der verarbeiteten Daten</h3>
+                    <h3 className={`text-xl font-semibold mb-3 mt-6 border-b border-[var(--accent-color)]/30 pb-1`}>Arten der verarbeiteten Daten</h3>
                     <ul className='list-disc list-inside ml-4 space-y-1'>
                         <li>Bestandsdaten, Zahlungsdaten, Kontaktdaten, Inhaltsdaten, Vertragsdaten</li>
                         <li>Nutzungsdaten</li>
                         <li>Meta-, Kommunikations-, Verfahrens- und Protokolldaten</li>
                     </ul>
 
-                    <h3 className={`text-xl font-semibold mb-3 mt-6 border-b border-[${ACCENT_COLOR}]/30 pb-1`}>Kategorien betroffener Personen</h3>
+                    <h3 className={`text-xl font-semibold mb-3 mt-6 border-b border-[var(--accent-color)]/30 pb-1`}>Kategorien betroffener Personen</h3>
                     <ul className='list-disc list-inside ml-4 space-y-1'>
                         <li>Leistungsempfänger und Auftraggeber, Interessenten, Kommunikationspartner</li>
                         <li>Nutzer, Geschäfts- und Vertragspartner</li>
                     </ul>
 
-                    <h3 className={`text-xl font-semibold mb-3 mt-6 border-b border-[${ACCENT_COLOR}]/30 pb-1`}>Zwecke der Verarbeitung</h3>
+                    <h3 className={`text-xl font-semibold mb-3 mt-6 border-b border-[var(--accent-color)]/30 pb-1`}>Zwecke der Verarbeitung</h3>
                     <ul className='list-disc list-inside ml-4 space-y-1'>
                         <li>Erbringung vertraglicher Leistungen und Erfüllung vertraglicher Pflichten, Kommunikation, Sicherheitsmaßnahmen</li>
                         <li>Büro- und Organisationsverfahren, Feedback, Bereitstellung unseres Onlineangebotes und Nutzerfreundlichkeit</li>
@@ -97,7 +91,7 @@ export default function Privacy() {
                 
                 {/* --- Maßgebliche Rechtsgrundlagen --- */}
                 <Section id="m2427" title="Maßgebliche Rechtsgrundlagen">
-                    <h3 className={`text-xl font-semibold mb-3 border-b border-[${ACCENT_COLOR}]/30 pb-1`}>Maßgebliche Rechtsgrundlagen nach der DSGVO</h3>
+                    <h3 className={`text-xl font-semibold mb-3 border-b border-[var(--accent-color)]/30 pb-1`}>Maßgebliche Rechtsgrundlagen nach der DSGVO</h3>
                     <p>Im Folgenden erhalten Sie eine Übersicht der Rechtsgrundlagen der DSGVO, auf deren Basis wir personenbezogene Daten verarbeiten:</p>
                     <ul className='list-disc list-inside ml-4 space-y-2'>
                         <li>**Einwilligung:** Art. 6 Abs. 1 S. 1 lit. a) DSGVO</li>
@@ -131,7 +125,7 @@ export default function Privacy() {
                     <p>Wir löschen personenbezogene Daten, sobald die zugrundeliegenden Einwilligungen widerrufen werden oder keine weiteren rechtlichen Grundlagen für die Verarbeitung bestehen (wenn der Zweck entfällt oder die Daten nicht mehr benötigt werden).</p>
                     <p>Ausnahmen bestehen, wenn gesetzliche Pflichten (z.B. Archivierung für Steuerzwecke) oder die Rechtsverfolgung eine längere Aufbewahrung erfordern.</p>
                     
-                    <h3 className={`text-xl font-semibold mb-3 mt-6 border-b border-[${ACCENT_COLOR}]/30 pb-1`}>Gültige Fristen nach deutschem Recht:</h3>
+                    <h3 className={`text-xl font-semibold mb-3 mt-6 border-b border-[var(--accent-color)]/30 pb-1`}>Gültige Fristen nach deutschem Recht:</h3>
                     <ul className='list-disc list-inside ml-4 space-y-2'>
                         <li>**10 Jahre:** Aufbewahrungsfrist für Bücher, Rechnungen, Jahresabschlüsse und Buchungsbelege.</li>
                         <li>**6 Jahre:** Übrige Geschäftsunterlagen, empfangene und abgesandte Handels- oder Geschäftsbriefe.</li>

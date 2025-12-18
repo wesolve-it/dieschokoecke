@@ -1,23 +1,16 @@
-import React from 'react';
-
-// --- FARBEN (Konsistent mit den anderen Komponenten) ---
-const TEXT_COLOR = '#3E2723';     // Dunkelbraun
-const ACCENT_COLOR = '#795548';   // Akzent-Braun
-const LIGHT_BG = '#FDFCFB';       // Sehr helles, fast weißes Creme
-
 export default function Impressum() {
   return (
-    <div className={`bg-[${LIGHT_BG}] py-16 lg:py-24 text-[${TEXT_COLOR}]`} data-aos="fade-in" data-aos-duration="800">
+    <div className={`bg-[var(--light-bg)] py-16 lg:py-24 text-[var(--text-color)]`} data-aos="fade-in" data-aos-duration="800">
       <div className='max-w-screen-xl mx-auto px-6 xl:px-0'>
         
         {/* --- Haupt-Überschrift --- */}
-        <h1 className={`text-5xl lg:text-6xl font-serif italic text-[${ACCENT_COLOR}] mb-10 border-b-2 border-[${ACCENT_COLOR}]/30 pb-4`}>
+        <h1 className={`text-5xl lg:text-6xl font-serif italic text-[var(--accent-color)] mb-10 border-b-2 border-[var(--accent-color)]/30 pb-4 pt-20`}>
             Impressum
         </h1>
 
         {/* --- 1. Allgemeine Angaben --- */}
         <section className='mb-10 p-6 rounded-xl bg-white shadow-lg'>
-          <h2 className={`text-2xl font-semibold mb-4 border-l-4 border-[${ACCENT_COLOR}] pl-3`}>
+          <h2 className={`text-2xl font-semibold mb-4 border-l-4 border-[var(--accent-color)] pl-3`}>
             Verantwortlich für den Inhalt
           </h2>
           <div className='text-lg font-light leading-relaxed'>
@@ -30,19 +23,19 @@ export default function Impressum() {
 
         {/* --- 2. Kontakt --- */}
         <section className='mb-10 p-6 rounded-xl bg-white shadow-lg'>
-          <h2 className={`text-2xl font-semibold mb-4 border-l-4 border-[${ACCENT_COLOR}] pl-3`}>
+          <h2 className={`text-2xl font-semibold mb-4 border-l-4 border-[var(--accent-color)] pl-3`}>
             Kontakt
           </h2>
           <div className='text-lg font-light leading-relaxed'>
             <p className='mb-1'>
                 Telefon: 
-                <a href="tel:+491748130465" className={`ml-2 text-[${ACCENT_COLOR}] hover:underline`}>
+                <a href="tel:+491748130465" className={`ml-2 text-[var(--accent-color)] hover:underline`}>
                     +49 174 8130465
                 </a>
             </p>
             <p>
                 E-Mail: 
-                <a href="mailto:kontakt@dieschokoecke.de" className={`ml-2 text-[${ACCENT_COLOR}] hover:underline`}>
+                <a href="mailto:kontakt@dieschokoecke.de" className={`ml-2 text-[var(--accent-color)] hover:underline`}>
                     kontakt@dieschokoecke.de
                 </a>
             </p>
@@ -52,7 +45,7 @@ export default function Impressum() {
         {/* --- 3. Rechtliche Hinweise (Grid oder Container) --- */}
         <div className='grid lg:grid-cols-2 gap-8'>
             <section className='p-6 rounded-xl bg-white shadow-lg'>
-                <h2 className={`text-xl font-semibold mb-3 border-l-4 border-[${ACCENT_COLOR}]/50 pl-3`}>
+                <h2 className={`text-xl font-semibold mb-3 border-l-4 border-[var(--accent-color)]/50 pl-3`}>
                     EU-Streitschlichtung
                 </h2>
                 <p className='font-light leading-relaxed text-base'>
@@ -61,7 +54,7 @@ export default function Impressum() {
                         href="https://ec.europa.eu/consumers/odr/" 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className={`block mt-2 text-[${ACCENT_COLOR}] hover:underline font-normal`}
+                        className={`block mt-2 text-[var(--accent-color)] hover:underline font-normal`}
                     >
                         https://ec.europa.eu/consumers/odr/
                     </a>
@@ -70,7 +63,7 @@ export default function Impressum() {
             </section>
 
             <section className='p-6 rounded-xl bg-white shadow-lg'>
-                <h2 className={`text-xl font-semibold mb-3 border-l-4 border-[${ACCENT_COLOR}]/50 pl-3`}>
+                <h2 className={`text-xl font-semibold mb-3 border-l-4 border-[var(--accent-color)]/50 pl-3`}>
                     Verbraucherstreitbeilegung
                 </h2>
                 <p className='font-light leading-relaxed text-base'>

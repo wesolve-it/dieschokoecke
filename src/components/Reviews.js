@@ -1,11 +1,4 @@
-import React from 'react';
 import Bild from '../assets/266.png';
-
-// --- ANNAHME: Wir nutzen die Farben aus den vorherigen Komponenten ---
-const TEXT_COLOR = '#3E2723';     // Dunkelbraun
-const ACCENT_COLOR = '#795548';   // Akzent-Braun
-const LIGHT_BG = '#F8F4F2';       // Sehr helles Grau-Beige
-const STAR_COLOR = '#F5B300';     // Gold/Amber für Sterne
 
 // Beispiel-Review-Daten
 const reviews = [

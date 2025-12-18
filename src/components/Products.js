@@ -1,11 +1,5 @@
-import React from 'react';
 import Truffel from '../assets/truffel.svg';
 import { Link } from 'react-router-dom';
-
-// --- ANNAHME: Wir nutzen die Farben aus der Hero-Sektion ---
-const TEXT_COLOR = '#3E2723';     // Dunkelbraun
-const ACCENT_COLOR = '#8D6E63';   // Mittleres Braun
-const BUTTON_BG = '#6D4C41';      // Schokoladenbraun für Button
 
 // CSS Keyframes (für Floating-Effekt, wenn nicht global definiert)
 const customStyles = `

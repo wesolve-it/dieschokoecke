@@ -1,10 +1,3 @@
-import React from 'react';
-
-// --- FARBEN (Konsistent mit den anderen Komponenten) ---
-const TEXT_COLOR = '#3E2723';     // Dunkelbraun
-const ACCENT_COLOR = '#795548';   // Akzent-Braun (z.B. für Ränder)
-const CTA_BG = '#EAE0D7';         // Helles Creme-Braun für den Block-Hintergrund
-
 export default function HeimatCoupon() {
   return (
     <div className={`bg-[#EAE0D7] py-16 lg:py-24 text-[#3E2723]`} data-aos="fade-up" data-aos-duration="1000">

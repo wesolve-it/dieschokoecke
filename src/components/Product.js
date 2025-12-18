@@ -1,10 +1,3 @@
-import React from 'react';
-
-// --- FARBEN ---
-const TEXT_COLOR = '#3E2723';
-const ACCENT_COLOR = '#795548';
-const CARD_BG = '#FFFFFF';
-
 export default function Product({ product }) {
   const { price, title, image, description } = product.fields;
   const formattedPrice = price; 

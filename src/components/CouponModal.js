@@ -1,10 +1,4 @@
-import React, { useState, useEffect } from 'react';
-
-// --- FARBEN (Konsistent mit den anderen Komponenten) ---
-const TEXT_COLOR = '#3E2723';     // Dunkelbraun
-const ACCENT_COLOR = '#795548';   // Akzent-Braun
-const MODAL_BG = '#FDFCFB';       // Sehr helles, fast weißes Creme für das Modal
-const BUTTON_BG = '#6D4C41';      // Sattes Schokoladenbraun für den Button
+import { useState, useEffect } from 'react';
 
 const CouponModal = () => {
   const [isModalVisible, setModalVisible] = useState(false);

@@ -1,4 +1,3 @@
-import React from 'react'
 import Products from '../components/Products';
 import About from '../components/About';
 import Features from '../components/Features';

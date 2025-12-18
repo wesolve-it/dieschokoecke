@@ -1,12 +1,3 @@
-import React from 'react';
-
-// --- FARBEN (Konsistent mit den anderen Komponenten) ---
-const TEXT_COLOR = '#3E2723';     // Dunkelbraun für Text
-const ACCENT_COLOR = '#795548';   // Akzent-Braun für Fokus/Ränder
-const LIGHT_BG = '#FDFCFB';       // Sehr helles, fast weißes Creme für den Hintergrund
-const FORM_BG = '#FFFFFF';        // Reines Weiß für den Formular-Container
-const CTA_BUTTON_BG = '#6D4C41';  // Sattes Schokoladenbraun für den Button
-
 export default function Contact() {
   const handleSubmit = (event) => {
     event.preventDefault(); // Verhindert das Standardformularverhalten

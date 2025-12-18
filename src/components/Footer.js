@@ -1,14 +1,7 @@
-import React from 'react';
 import Chocolate from '../assets/FullLogo_Transparent_NoBuffer.png';
 import Instagram from '../assets/instagram.svg';
 import { NavLink } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-
-// --- FARBEN (Konsistent mit den anderen Komponenten) ---
-const DARK_BG = '#4E342E';     // Dunkles Schokoladenbraun für den Footer
-const LIGHT_TEXT = '#EAE0D7';  // Helles Creme-Braun für Haupttext
-const ACCENT_HOVER = '#D4C1A5'; // Gold-Akzent für Hover-Effekte
-const LOGO_TEXT = '#A1887F';  // Mittelbraun für Slogan
 
 export default function Footer() {
     const navigate = useNavigate()

@@ -15,12 +15,6 @@ const customStyles = `
 `;
 // ----------------------------------------------------------------------------
 
-// --- NEUE FARBEN ---
-const NEW_BG_COLOR = '#F8F4F2'; // NEU: Sehr helles, warmes Grau-Beige
-const TEXT_COLOR = '#3E2723';     // Dunkelbraun
-const ACCENT_COLOR = '#795548';   // NEU: Etwas dunklerer/satterer Akzent-Braun
-const SHINE_COLOR = '#D4C1A5';     // Hellbraun/Gold (Beibehalten für Ring-Effekt)
-
 export default function About() {
 
     const [isContactClicked, setIsContactClicked] = React.useState(false);
