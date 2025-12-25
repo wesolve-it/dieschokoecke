@@ -2,12 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Logo from '../assets/FullLogo_Transparent_NoBuffer.png';
 import { NavLink, useNavigate } from 'react-router-dom';
 
-// --- FARBEN ---
-const TEXT_COLOR = '#3E2723';
-const ACCENT_COLOR = '#795548';
-const HEADER_BG = '#FFFFFF';
-const CTA_BUTTON_BG = '#6D4C41';
-
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -49,8 +43,8 @@ export default function Navigation() {
     <nav 
       className={`fixed w-full top-0 z-50 transition-all duration-500 ease-in-out
         ${isScrolled 
-          ? `bg-[${HEADER_BG}]/F0 backdrop-blur-md py-2 shadow-xl` // Schlanker & Glas-Effekt
-          : `bg-[${HEADER_BG}] py-5 shadow-sm` // Luftiger & Dezenter
+          ? `bg-[var(--header-bg)]/F0 backdrop-blur-md py-2 shadow-xl` // Schlanker & Glas-Effekt
+          : `bg-[var(--header-bg)] py-5 shadow-sm` // Luftiger & Dezenter
         }`}
     >
       <div className="max-w-screen-xl flex items-center justify-between mx-auto px-6">
@@ -68,8 +62,8 @@ export default function Navigation() {
         <button
           onClick={toggleMenu}
           type="button"
-          className={`inline-flex items-center p-2 w-10 h-10 justify-center text-[${TEXT_COLOR}] 
-                     rounded-lg md:hidden hover:bg-[${ACCENT_COLOR}]/10 focus:outline-none transition-colors`}
+          className={`inline-flex items-center p-2 w-10 h-10 justify-center text-[var(--text-color)] 
+                     rounded-lg md:hidden hover:bg-[var(--accent-color)]/10 focus:outline-none transition-colors`}
         >
           <span className="sr-only">Menü</span>
           <div className="relative w-6 h-5">
@@ -93,10 +87,10 @@ export default function Navigation() {
               <li key={item.id} className='w-full md:w-auto text-center mb-4 md:mb-0'>
                 <button
                   onClick={() => handleScrollToSection(item.id)}
-                  className={`relative py-2 md:py-0 text-[${TEXT_COLOR}] transition-colors group overflow-hidden`}
+                  className={`relative py-2 md:py-0 text-[var(--text-color)] transition-colors group overflow-hidden`}
                 >
                   {item.label}
-                  <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-[${ACCENT_COLOR}] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300`}></span>
+                  <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-[var(--accent-color)] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300`}></span>
                 </button>
               </li>
             ))}
@@ -106,10 +100,10 @@ export default function Navigation() {
                 to="produkte" 
                 onClick={() => setIsMenuOpen(false)}
                 className={({ isActive }) => `relative py-2 md:py-0 transition-colors group
-                  ${isActive ? `text-[${ACCENT_COLOR}] font-medium` : `text-[${TEXT_COLOR}]`}`}
+                  ${isActive ? `text-[var(--accent-color)] font-medium` : `text-[var(--text-color)]`}`}
               >
                 Produkte
-                <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-[${ACCENT_COLOR}] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300`}></span>
+                <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-[var(--accent-color)] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300`}></span>
               </NavLink>
             </li>
 
@@ -120,8 +114,8 @@ export default function Navigation() {
                 onClick={() => setIsMenuOpen(false)}
                 className={`
                   inline-flex items-center justify-center px-8 py-2.5 rounded-full text-white
-                  bg-[${CTA_BUTTON_BG}] transition-all duration-300 shadow-md 
-                  hover:bg-[${TEXT_COLOR}] hover:shadow-xl hover:scale-105 active:scale-95
+                  bg-[var(--cta-button-bg)] transition-all duration-300 shadow-md 
+                  hover:bg-[var(--text-color)] hover:shadow-xl hover:scale-105 active:scale-95
                   text-base font-semibold w-full md:w-auto
                 `}
               >
