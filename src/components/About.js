@@ -61,14 +61,14 @@ export default function About() {
                             
                             {/* Bild 2: Trüffel-Auswahl (HOVER-Effekt: 3D-Tilt) */}
                             <div 
-                                className={`group relative w-full max-w-md mx-auto xl:max-w-none rounded-xl overflow-hidden shadow-2xl shadow-[var(--accent-color)]/20 transition-transform duration-500 hover:rotate-1`}
+                                className={`group relative w-full max-w-xs mx-auto xl:max-w-none rounded-xl overflow-hidden shadow-2xl shadow-[var(--accent-color)]/20 transition-transform duration-500 hover:rotate-1`}
                                 data-aos="fade-up"
                                 data-aos-duration="1000"
                             >
                                 <img 
                                     src={Image2} 
                                     alt="Detailaufnahme von Trüffeln" 
-                                    className='w-full h-64 md:h-80 xl:h-[400px] object-cover transition-transform duration-500 group-hover:scale-[1.08] group-hover:brightness-110'
+                                    className='w-full h-56 md:h-64 xl:h-[400px] object-cover transition-transform duration-500 group-hover:scale-[1.08] group-hover:brightness-110'
                                 />
                                 {/* Micro-Interaction: Overlay mit Callout beim Hover */}
                                 <div className={`absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300`}>

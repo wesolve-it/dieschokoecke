@@ -99,10 +99,7 @@ export default function Navigation() {
             <li className='w-full md:w-auto text-center mb-4 md:mb-0'>
               <NavLink 
                 to="produkte" 
-                onClick={() => {
-                  setIsMenuOpen(false);
-                  window.scrollTo({ top: 0, behavior: 'auto' });
-                }}
+                onClick={() => setIsMenuOpen(false)}
                 className={({ isActive }) => `relative py-2 md:py-0 transition-colors group
                   ${isActive ? `text-[var(--accent-color)] font-medium` : `text-[var(--text-color)]`}`}
               >

@@ -9,10 +9,21 @@ import Products from './pages/Products';
 import Impressum from './pages/Impressum';
 import NotFound from './pages/NotFound';
 import 'flowbite/dist/flowbite.min.js';
-import { useEffect, useState } from 'react';
+import { useEffect, useLayoutEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import client from './Client';
 import AOS from "aos";
 import "aos/dist/aos.css";
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -44,6 +55,7 @@ function App() {
   return (
     <div className="flex-grow overflow-x-clip relative">
       <BrowserRouter>
+      <ScrollToTop />
       <Navigation />
         <Routes>
           <Route index element={<Home faqEntries={faqEntries} />} />
