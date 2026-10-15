@@ -1,23 +1,10 @@
 import Chocolate from '../assets/FullLogo_Transparent_NoBuffer.png';
 import Instagram from '../assets/instagram.svg';
 import { NavLink } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
+import useSectionNavigation from '../hooks/useSectionNavigation';
 
 export default function Footer() {
-    const navigate = useNavigate()
-
-    const handleScrollToFAQ = () => {
-        navigate('/');
-        setTimeout(() => {
-          const faqSection = document.getElementById('faq');
-          if (faqSection) {
-            window.scrollTo({
-              top: faqSection.offsetTop,
-              behavior: 'smooth'
-            });
-          }
-        }, 300);
-      };
+    const scrollToSection = useSectionNavigation();
 
   return (
     <footer className={`bg-[#4E342E] text-[#EAE0D7]`} data-aos="fade-up" data-aos-duration="1000">
@@ -45,7 +32,7 @@ export default function Footer() {
                                 <NavLink to="produkte" className="hover:text-[var(--accent-hover)] transition-colors duration-200">Produkte</NavLink>
                             </li>
                             <li>
-                                <button onClick={handleScrollToFAQ} className="hover:text-[var(--accent-hover)] transition-colors duration-200">FAQ</button>
+                                <button onClick={() => scrollToSection('faq')} className="hover:text-[var(--accent-hover)] transition-colors duration-200">FAQ</button>
                             </li>
                         </ul>
                     </div>

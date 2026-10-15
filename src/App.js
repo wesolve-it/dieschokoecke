@@ -42,7 +42,7 @@ function App() {
   }, [])
 
   return (
-    <div className="flex-grow overflow-x-hidden relative">
+    <div className="flex-grow overflow-x-clip relative">
       <BrowserRouter>
       <Navigation />
         <Routes>

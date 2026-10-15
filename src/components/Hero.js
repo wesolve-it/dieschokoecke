@@ -19,11 +19,11 @@ const customStyles = `
 
 export default function Hero() {
   return (
-    <div className="pt-[80px] lg:pt-[90px]">
+    <div className="pt-[80px] xl:pt-[90px]">
       <style>{customStyles}</style>
 
       <Element 
-        className='relative bg-gradient-to-br from-[#F5F5F5] via-[#EDEBE4] to-[#EAE0D7] text-[#3E2723] py-10 lg:pt-20 overflow-hidden min-h-[70vh]' 
+        className='relative bg-gradient-to-br from-[#F5F5F5] via-[#EDEBE4] to-[#EAE0D7] text-[#3E2723] py-10 xl:pt-20 overflow-hidden min-h-[70vh]'
         id="home" 
         name="home"
       >
@@ -35,32 +35,32 @@ export default function Hero() {
             
             {/* Kopfzeile */}
             <h1 
-                className='text-center text-4xl lg:text-8xl text-[#4E342E]'
+                className='text-center text-4xl md:text-6xl xl:text-8xl text-[#4E342E]'
                 data-aos="fade-down"
                 data-aos-duration="800"
             >
                 die <span className='italic font-light font-serif text-[#6D4C41]'>schokoecke</span>
             </h1>
 
-            <div className='lg:flex lg:items-center mt-10 lg:mt-16'>
+            <div className='xl:flex xl:items-center mt-10 xl:mt-16'>
                 
                 {/* TEXT-Sektion (Links) */}
                 <div 
-                    className='lg:flex-1 lg:pr-10'
+                    className='xl:flex-1 xl:pr-10'
                     data-aos="fade-right"
                     data-aos-duration="1000"
                 >
-                    <h2 className='text-center text-3xl font-light lg:text-7xl lg:font-extralight lg:text-left mt-6 lg:mt-0 leading-tight'>
+                    <h2 className='text-center text-3xl md:text-5xl font-light xl:text-7xl xl:font-extralight xl:text-left mt-6 xl:mt-0 leading-tight'>
                         Belgische<br/>
                         <span className='text-[#8D6E63] font-normal'>Pralinen</span>
                     </h2>
                     
-                    <h3 className='text-center lg:text-left mt-4 lg:mt-6 font-light text-lg lg:text-xl text-[#5D4037] max-w-lg'>
+                    <h3 className='text-center xl:text-left mt-4 xl:mt-6 font-light text-lg xl:text-xl text-[#5D4037] max-w-lg mx-auto xl:mx-0'>
                         Hallo, schön dass du in der SchokoEcke stöberst. Bei mir gibt es hochwertige belgische Pralinen der Firma <span className='font-semibold'>Selectinas</span>. Viel Spaß beim Entdecken des <span className='font-semibold'>puren Genusses</span>.
                     </h3>
 
                     {/* Neuer, hervorgehobener CTA-Bereich */}
-                    <div className='mt-8 flex justify-center lg:justify-start'>
+                    <div className='mt-8 flex justify-center xl:justify-start'>
                       <a href="/produkte">
                         <button 
                             className='px-10 py-4 bg-[#6D4C41] text-white rounded-full text-lg font-medium hover:bg-[#8D6E63] transition-all duration-300 shadow-xl shadow-[#6D4C41]/30 hover:scale-[1.03]'
@@ -74,17 +74,17 @@ export default function Hero() {
                 
                 {/* BILD-Sektion (Rechts) */}
                 <div 
-                    className='lg:flex-1 relative mt-10 lg:mt-0'
+                    className='xl:flex-1 relative mt-10 xl:mt-0'
                     data-aos="fade-left"
                     data-aos-duration="1000"
                     data-aos-delay="200"
                 >
                     {/* Der animierte Container für das SVG */}
-                    <div className='float-truffle max-w-sm lg:max-w-none mx-auto'>
+                    <div className='float-truffle max-w-sm md:max-w-xl xl:max-w-none mx-auto'>
                         <img 
                             src={Chocolate} 
                             alt="Schokoladenauswahl" 
-                            className='w-4/6 mx-auto lg:w-full h-auto object-contain drop-shadow-2xl'
+                            className='w-4/6 mx-auto xl:w-full h-auto object-contain drop-shadow-2xl'
                         />
                     </div>
                     {/* Zusätzliche dekorative Elemente (z.B. fliegende Kakaobohne) */}

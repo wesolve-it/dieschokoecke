@@ -1,46 +1,47 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Logo from '../assets/FullLogo_Transparent_NoBuffer.png';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import useSectionNavigation from '../hooks/useSectionNavigation';
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const navigate = useNavigate();
+  const scrollToSection = useSectionNavigation();
+  const scrollFrame = useRef(null);
 
   // --- SCROLL-EFFEKT LOGIK ---
   useEffect(() => {
     const handleScroll = () => {
-      // Wenn mehr als 50px gescrollt wurde, wird isScrolled true
-      if (window.scrollY > 50) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
+      if (scrollFrame.current !== null) {
+        return;
       }
+
+      scrollFrame.current = window.requestAnimationFrame(() => {
+        scrollFrame.current = null;
+        setIsScrolled(window.scrollY > 50);
+      });
     };
 
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    handleScroll();
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (scrollFrame.current !== null) {
+        window.cancelAnimationFrame(scrollFrame.current);
+      }
+    };
   }, []);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   const handleScrollToSection = (sectionId) => {
     setIsMenuOpen(false);
-    navigate('/');
-    setTimeout(() => {
-      const section = document.getElementById(sectionId);
-      if (section) {
-        const offset = isScrolled ? 70 : 90; // Anpassung an die Header-Höhe
-        window.scrollTo({
-          top: section.offsetTop - offset,
-          behavior: 'smooth'
-        });
-      }
-    }, 300);
+    scrollToSection(sectionId);
   };
 
   return (
     <nav 
+      data-site-navigation
       className={`fixed w-full top-0 z-50 transition-all duration-500 ease-in-out
         ${isScrolled 
           ? `bg-[var(--header-bg)]/F0 backdrop-blur-md py-2 shadow-xl` // Schlanker & Glas-Effekt
@@ -98,7 +99,10 @@ export default function Navigation() {
             <li className='w-full md:w-auto text-center mb-4 md:mb-0'>
               <NavLink 
                 to="produkte" 
-                onClick={() => setIsMenuOpen(false)}
+                onClick={() => {
+                  setIsMenuOpen(false);
+                  window.scrollTo({ top: 0, behavior: 'auto' });
+                }}
                 className={({ isActive }) => `relative py-2 md:py-0 transition-colors group
                   ${isActive ? `text-[var(--accent-color)] font-medium` : `text-[var(--text-color)]`}`}
               >
