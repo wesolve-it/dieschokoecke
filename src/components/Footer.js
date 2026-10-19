@@ -1,4 +1,4 @@
-import Chocolate from '../assets/FullLogo_Transparent_NoBuffer.png';
+import Chocolate from '../assets/FullLogo_Light.png';
 import Instagram from '../assets/instagram.svg';
 import { NavLink } from 'react-router-dom';
 import useSectionNavigation from '../hooks/useSectionNavigation';
@@ -14,7 +14,8 @@ export default function Footer() {
                 {/* --- Sektion 1: Logo & Slogan --- */}
                 <div className="mb-10 md:mb-0 md:w-1/4">
                     <NavLink to="/" className="flex items-center flex-col">
-                        <img src={Chocolate} className="h-10 lg:h-24 transition-transform duration-300 hover:scale-[1.05]" alt="dieschokoecke Logo" />
+                        {/* Helle Logo-Variante: Konturen und Schrift in Creme für den dunklen Hintergrund */}
+                        <img src={Chocolate} className="h-16 lg:h-24 transition-transform duration-300 hover:scale-[1.05]" alt="dieschokoecke Logo" />
                         <span className={`self-center mt-3 text-sm tracking-widest uppercase text-[var(--logo-text)] font-light`}>
                             QUALITÄT IN SCHOKOLADE
                         </span>
@@ -66,7 +67,7 @@ export default function Footer() {
                         </ul>
                     </div>
                     
-                    {/* Socials & Partner */}
+                    {/* Socials */}
                     <div>
                         <h2 className={`mb-6 text-base font-semibold uppercase tracking-wider text-[var(--accent-hover)]`}>Folge uns</h2>
                         
@@ -86,11 +87,6 @@ export default function Footer() {
                                 <span className="sr-only">Facebook page</span>
                             </a>
                         </div>
-                        
-                        {/* Partner Logo */}
-                        <div className="mt-8">
-                             <img src={require('../assets/n-land-1j9c4filjl4limt8zxul-logowide.png')} alt="Heimatgutschein Logo" className="h-auto w-32 filter brightness-150" /> 
-                        </div>
                     </div>
                 </div>
             </div>
@@ -100,7 +96,7 @@ export default function Footer() {
             {/* --- Copyright --- */}
             <div className="sm:flex sm:items-center sm:justify-center">
                 <span className={`text-sm text-[var(--logo-text)] font-light`}>
-                    ©2025 <a href="https://dieschokoecke.de" className={`hover:text-[var(--accent-hover)] transition-colors duration-200`}>dieschokoecke</a>. All Rights Reserved.
+                    ©2026 <a href="https://dieschokoecke.de" className={`hover:text-[var(--accent-hover)] transition-colors duration-200`}>dieschokoecke</a>. All Rights Reserved.
                 </span>
             </div>
         </div>
