@@ -17,7 +17,7 @@ export default function Product({ product }) {
       {/* --- Produktbild (Nicht dehnbar) --- */}
       <div className="relative overflow-hidden flex-shrink-0">
         <img 
-          className="h-72 lg:h-80 w-full object-cover object-center 
+          className="aspect-square sm:aspect-auto sm:h-64 lg:h-80 w-full object-cover object-center 
           transition-transform duration-500 group-hover:scale-[1.1] group-hover:rotate-1" 
           src={image.fields.file.url} 
           alt={title} 
@@ -26,7 +26,7 @@ export default function Product({ product }) {
       </div>
       
       {/* --- Details Sektion (Wachsend) --- */}
-      <div className={`p-5 pt-3 text-[var(--text-color)] flex flex-col flex-grow`}>
+      <div className={`p-4 sm:p-5 pt-3 text-[var(--text-color)] flex flex-col flex-grow`}>
         
         {/* Titel */}
         <h2 className={`mb-1 text-2xl font-serif italic font-normal text-[var(--accent-color)] transition-colors duration-300 group-hover:text-[var(--text-color)]`}>

@@ -19,7 +19,7 @@ export default function Products({products}) {
 
       {/* --- 2. Produkt-Grid --- */}
       <div className='max-w-screen-xl mx-auto px-6 xl:px-0'>
-        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-6 gap-y-12'>
+        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-6 gap-y-8 sm:gap-y-12'>
           {
             products.map(chocolate => (
               <div key={chocolate.fields.title} data-aos="fade-up" data-aos-delay="100">
