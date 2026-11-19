@@ -33,6 +33,7 @@ export default function Navigation() {
       window.removeEventListener('scroll', handleScroll);
       if (scrollFrame.current !== null) {
         window.cancelAnimationFrame(scrollFrame.current);
+        scrollFrame.current = null;
       }
     };
   }, []);
@@ -49,7 +50,7 @@ export default function Navigation() {
       data-site-navigation
       className={`fixed w-full top-0 z-50 transition-all duration-500 ease-in-out
         ${isScrolled 
-          ? `bg-[var(--header-bg)]/F0 backdrop-blur-md py-2 shadow-xl` // Schlanker & Glas-Effekt
+          ? `bg-[color:color-mix(in_srgb,var(--header-bg)_85%,transparent)] backdrop-blur-md py-2 shadow-xl` // Schlanker & Glas-Effekt
           : `bg-[var(--header-bg)] py-5 shadow-sm` // Luftiger & Dezenter
         }`}
     >
@@ -82,7 +83,7 @@ export default function Navigation() {
           onClick={toggleMenu}
           type="button"
           className={`inline-flex items-center p-2 w-10 h-10 justify-center text-[var(--text-color)] 
-                     rounded-lg md:hidden hover:bg-[var(--accent-color)]/10 focus:outline-none transition-colors`}
+                     rounded-lg md:hidden hover:bg-[color:color-mix(in_srgb,var(--accent-color)_10%,transparent)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-color)] transition-colors`}
         >
           <span className="sr-only">Menü</span>
           <div className="relative w-6 h-5">

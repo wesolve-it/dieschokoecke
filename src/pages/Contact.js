@@ -1,17 +1,26 @@
+import { useState } from 'react';
 export default function Contact() {
-  const handleSubmit = (event) => {
-    event.preventDefault(); // Verhindert das Standardformularverhalten
-    const form = event.target;
-    const data = new FormData(form);
+  const [status, setStatus] = useState('idle'); // idle | sending | success | error
 
-    // Netlify Form Submission
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(data).toString(),
-    })
-      .then(() => alert("Ihre Nachricht wurde erfolgreich gesendet. Wir melden uns in Kürze bei Ihnen!"))
-      .catch((error) => alert("Beim Senden des Formulars ist ein Fehler aufgetreten: ", error));
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const form = event.currentTarget;
+    setStatus('sending');
+
+    try {
+      // Netlify Form Submission
+      const response = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(new FormData(form)).toString(),
+      });
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      form.reset();
+      setStatus('success');
+    } catch (error) {
+      console.error(error);
+      setStatus('error');
+    }
   };
 
   return (
@@ -29,7 +38,7 @@ export default function Contact() {
                 <h2 className={`text-5xl lg:text-6xl font-serif italic mb-4 text-[var(--accent-color)]`}>
                     Kontakt & Bestellung
                 </h2>
-                <p className={`font-light text-xl text-[var(--text-color)]/80`}>
+                <p className={`font-light text-xl text-[color:color-mix(in_srgb,var(--text-color)_80%,transparent)]`}>
                     Gerne nehmen wir Ihre individuelle Bestellung entgegen oder beantworten Ihre Fragen. Bitte füllen Sie das Formular aus – wir melden uns umgehend bei Ihnen.
                 </p>
             </header>
@@ -110,14 +119,29 @@ export default function Contact() {
                     {/* Submit Button */}
                     <button 
                         type="submit" 
+                        disabled={status === 'sending'}
                         className={`mt-4 w-full sm:w-auto py-3 px-8 text-lg font-semibold 
                                    text-white rounded-full bg-[var(--cta-button-bg)] 
                                    transition-all duration-300 shadow-xl 
                                    hover:bg-[var(--accent-strong)] hover:scale-[1.02] 
-                                   focus:ring-4 focus:ring-[var(--accent-color)]/50`}
+                                   focus:ring-4 focus:ring-[color:color-mix(in_srgb,var(--accent-color)_50%,transparent)]
+                                   disabled:opacity-60 disabled:cursor-wait disabled:hover:scale-100`}
                     >
-                        Nachricht senden
+                        {status === 'sending' ? 'Wird gesendet …' : 'Nachricht senden'}
                     </button>
+
+                    <div aria-live="polite" role="status">
+                        {status === 'success' && (
+                            <p className="rounded-lg border border-[var(--line)] bg-[var(--light-bg)] p-4 text-[var(--text-color)]">
+                                Vielen Dank! Ihre Nachricht ist bei uns angekommen. Wir melden uns in Kürze bei Ihnen.
+                            </p>
+                        )}
+                        {status === 'error' && (
+                            <p className="rounded-lg border border-[var(--accent-color)] bg-[var(--light-bg)] p-4 text-[var(--text-color)]">
+                                Ihre Nachricht konnte nicht gesendet werden. Ihre Eingaben sind noch da – bitte versuchen Sie es erneut oder schreiben Sie uns direkt per E-Mail.
+                            </p>
+                        )}
+                    </div>
                     
                 </form>
             </div>

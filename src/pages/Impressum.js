@@ -4,7 +4,7 @@ export default function Impressum() {
       <div className='max-w-screen-xl mx-auto px-6 xl:px-0'>
         
         {/* --- Haupt-Überschrift --- */}
-        <h1 className={`text-5xl lg:text-6xl font-serif italic text-[var(--accent-color)] mb-10 border-b-2 border-[var(--accent-color)]/30 pb-4 pt-20`}>
+        <h1 className={`text-5xl lg:text-6xl font-serif italic text-[var(--accent-color)] mb-10 border-b-2 border-[color:color-mix(in_srgb,var(--accent-color)_30%,transparent)] pb-4 pt-20`}>
             Impressum
         </h1>
 
@@ -45,7 +45,7 @@ export default function Impressum() {
         {/* --- 3. Rechtliche Hinweise (Grid oder Container) --- */}
         <div className='grid lg:grid-cols-2 gap-8'>
             <section className='p-6 rounded-xl bg-[var(--surface)] shadow-lg'>
-                <h2 className={`text-xl font-semibold mb-3 border-l-4 border-[var(--accent-color)]/50 pl-3`}>
+                <h2 className={`text-xl font-semibold mb-3 border-l-4 border-[color:color-mix(in_srgb,var(--accent-color)_50%,transparent)] pl-3`}>
                     EU-Streitschlichtung
                 </h2>
                 <p className='font-light leading-relaxed text-base'>
@@ -63,7 +63,7 @@ export default function Impressum() {
             </section>
 
             <section className='p-6 rounded-xl bg-[var(--surface)] shadow-lg'>
-                <h2 className={`text-xl font-semibold mb-3 border-l-4 border-[var(--accent-color)]/50 pl-3`}>
+                <h2 className={`text-xl font-semibold mb-3 border-l-4 border-[color:color-mix(in_srgb,var(--accent-color)_50%,transparent)] pl-3`}>
                     Verbraucherstreitbeilegung
                 </h2>
                 <p className='font-light leading-relaxed text-base'>

@@ -39,13 +39,13 @@ export default function Product({ product }) {
           - Der div-Wrapper mit flex-grow sorgt dafür, dass dieser Bereich den gesamten verfügbaren Platz einnimmt.
         */}
         <div className="flex-grow">
-             <p className={`mb-4 text-base font-light text-[var(--text-color)]/80`}>
+             <p className={`mb-4 text-base font-light text-[color:color-mix(in_srgb,var(--text-color)_80%,transparent)]`}>
                 {description}
             </p>
         </div>
         
         {/* Preis und Button-Sektion (Wird durch mt-auto nach unten gedrückt) */}
-        <div className="flex items-center justify-between border-t border-[var(--accent-color)]/30 pt-4 mt-auto">
+        <div className="flex items-center justify-between border-t border-[color:color-mix(in_srgb,var(--accent-color)_30%,transparent)] pt-4 mt-auto">
           
           {/* Preis */}
           <p className={`text-2xl font-bold text-[var(--text-color)]`}>

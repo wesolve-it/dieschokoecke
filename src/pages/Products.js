@@ -1,6 +1,8 @@
 import Product from '../components/Product';
 
-export default function Products({products}) {
+import { NavLink } from 'react-router-dom';
+
+export default function Products({ products, status = 'ready' }) {
   return (
     <div className={`bg-[var(--light-bg)] py-16 lg:py-24 text-[var(--text-color)]`} data-aos="fade-in" data-aos-duration="1000">
       
@@ -29,10 +31,44 @@ export default function Products({products}) {
           }
         </div>
         
-        {/* Optional: Wenn keine Produkte vorhanden sind */}
-        {products.length === 0 && (
-          <div className='text-center py-20'>
-            <p className='text-xl text-[var(--muted-text)]'>Aktuell sind keine Produkte verfügbar.</p>
+        {/* Lade-, Fehler- und Leerzustand */}
+        {status === 'loading' && (
+          <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-6 gap-y-8 sm:gap-y-12' aria-busy='true' aria-label='Produkte werden geladen'>
+            {[0, 1, 2, 3].map((i) => (
+              <div key={i} className='rounded-xl bg-[var(--surface)] border border-[var(--line)] overflow-hidden motion-safe:animate-pulse'>
+                <div className='aspect-square bg-[var(--line)]'></div>
+                <div className='p-6 space-y-3'>
+                  <div className='h-5 w-2/3 rounded bg-[var(--line)]'></div>
+                  <div className='h-4 w-full rounded bg-[var(--line)]'></div>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+        {status !== 'loading' && products.length === 0 && (
+          <div className='text-center py-20 max-w-xl mx-auto' role='status'>
+            <p className='text-xl text-[var(--text-color)]'>
+              {status === 'error'
+                ? 'Die Produkte konnten gerade nicht geladen werden.'
+                : 'Aktuell sind keine Produkte verfügbar.'}
+            </p>
+            <p className='mt-3 text-[var(--muted-text)]'>
+              {status === 'error'
+                ? 'Bitte laden Sie die Seite neu oder fragen Sie uns direkt nach unserem Sortiment.'
+                : 'Fragen Sie gern direkt nach unserem aktuellen Sortiment.'}
+            </p>
+            <div className='mt-6 flex flex-col sm:flex-row gap-3 justify-center'>
+              {status === 'error' && (
+                <button type='button' onClick={() => window.location.reload()}
+                  className='px-6 py-3 rounded-full border-2 border-[var(--accent-color)] text-[var(--accent-color)] font-semibold hover:bg-[var(--accent-strong)] hover:text-white transition-colors'>
+                  Seite neu laden
+                </button>
+              )}
+              <NavLink to='/kontakt'
+                className='px-6 py-3 rounded-full bg-[var(--accent-strong)] text-white font-semibold hover:bg-[var(--button-hover)] transition-colors'>
+                Kontakt aufnehmen
+              </NavLink>
+            </div>
           </div>
         )}
       </div>

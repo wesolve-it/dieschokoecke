@@ -5,8 +5,8 @@ export default function NotFound() {
     <div className={`min-h-[85vh] bg-[var(--light-bg)] flex items-center justify-center px-6 py-20 overflow-hidden relative`}>
       
       {/* Sanfte Lichteffekte im Hintergrund */}
-      <div className={`absolute top-20 left-10 w-32 h-32 bg-[var(--accent-color)]/5 rounded-full blur-3xl `}></div>
-      <div className={`absolute bottom-20 right-10 w-48 h-48 bg-[var(--accent-color)]/5 rounded-full blur-3xl`}></div>
+      <div className={`absolute top-20 left-10 w-32 h-32 bg-[color:color-mix(in_srgb,var(--accent-color)_5%,transparent)] rounded-full blur-3xl `}></div>
+      <div className={`absolute bottom-20 right-10 w-48 h-48 bg-[color:color-mix(in_srgb,var(--accent-color)_5%,transparent)] rounded-full blur-3xl`}></div>
 
       <div className="max-w-2xl text-center relative z-10" data-aos="fade-up">
         
@@ -40,7 +40,7 @@ export default function NotFound() {
           Hoppla! Diese Praline wurde wohl schon vernascht.
         </h2>
         
-        <p className={`text-lg md:text-xl font-light mb-10 text-[var(--text-color)]/80 max-w-md mx-auto`}>
+        <p className={`text-lg md:text-xl font-light mb-10 text-[color:color-mix(in_srgb,var(--text-color)_80%,transparent)] max-w-md mx-auto`}>
           Die Seite, die Sie suchen, scheint nicht mehr da zu sein. Vielleicht haben wir sie gegen etwas noch Leckeres ausgetauscht?
         </p>
 

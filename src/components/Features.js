@@ -48,20 +48,20 @@ export default function Features() {
                 {featuresData.map((feature) => (
                     <section 
                         key={feature.title} 
-                        className={`group p-6 lg:p-8 rounded-xl bg-[var(--surface)] shadow-lg border-t-4 border-[var(--accent-color)]/50 transition-all duration-300 hover:shadow-xl hover:scale-[1.01]`}
+                        className={`group p-6 lg:p-8 rounded-xl bg-[var(--surface)] shadow-lg border border-[var(--line)] transition-all duration-300 hover:shadow-xl hover:scale-[1.01]`}
                         data-aos="fade-up"
                         data-aos-duration="1000"
                         data-aos-delay={feature.delay}
                     >
                         <div className='flex items-start mb-4'>
                             {/* Micro-Interaction: Icon mit subtilem Skalierungs- und Schatten-Effekt */}
-                            <div className={`flex-shrink-0 w-12 h-12 p-2 rounded-full bg-[var(--accent-color)]/10 border border-[var(--accent-color)]/30 
-                                transition-all duration-300 group-hover:scale-[1.05] group-hover:shadow-[var(--accent-color)]/40`}>
+                            <div className={`flex-shrink-0 w-12 h-12 p-2 rounded-full bg-[color:color-mix(in_srgb,var(--accent-color)_10%,transparent)] border border-[color:color-mix(in_srgb,var(--accent-color)_30%,transparent)] 
+                                transition-all duration-300 group-hover:scale-[1.05] group-hover:shadow-[color:color-mix(in_srgb,var(--accent-color)_40%,transparent)]`}>
                                 <img loading="lazy" decoding="async" src={feature.icon} alt={feature.title} className='w-full h-full object-contain' />
                             </div>
                             <div className='ml-4'>
                                 <h3 className='text-xl font-bold mb-1 group-hover:text-[var(--accent-color)] transition-colors duration-300'>{feature.title}</h3>
-                                <p className='font-light leading-relaxed text-[var(--text-color)]/90'>{feature.description}</p>
+                                <p className='font-light leading-relaxed text-[color:color-mix(in_srgb,var(--text-color)_90%,transparent)]'>{feature.description}</p>
                             </div>
                         </div>
                     </section>

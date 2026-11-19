@@ -38,7 +38,7 @@ export default function Products() {
               Unsere <span className='font-semibold'>belgischen Kakao-Trüffel</span> sind wahre Gaumenschmeichler und der perfekte Geheimtipp für besondere Anlässe: ob zum Geburtstag, als elegantes Geschenk für gute Kunden oder einfach, um sich selbst zu beschenken.
             </p>
             
-            <p className='mb-6 leading-relaxed font-light text-base text-center lg:text-left text-[var(--text-color)]/80'>
+            <p className='mb-6 leading-relaxed font-light text-base text-center lg:text-left text-[color:color-mix(in_srgb,var(--text-color)_80%,transparent)]'>
               Wählen Sie zwischen stilvollen Geschenkkartons oder einem liebevoll verpackten Organzasäckchen.
             </p>
 

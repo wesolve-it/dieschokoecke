@@ -14,7 +14,7 @@ const Section = ({ id, title, children }) => (
 
 // Hilfsfunktion zum Rendern des Inhaltsverzeichnisses
 const renderTableOfContents = (ACCENT_COLOR) => (
-    <div className={`mb-12 p-6 rounded-xl bg-[var(--section-bg)] shadow-lg border-l-4 border-r-4 border-[var(--accent-color)]/50`}>
+    <div className={`mb-12 p-6 rounded-xl bg-[var(--section-bg)] shadow-lg border border-[var(--line)]`}>
         <h2 className={`text-3xl font-semibold mb-4 text-[var(--text-color)]`}>Inhaltsübersicht</h2>
         <ul className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 font-light text-base leading-relaxed'>
             {/* Die Links verwenden die IDs aus Ihrem ursprünglichen Dokument */}
@@ -44,7 +44,7 @@ export default function Privacy() {
             <div className='max-w-screen-xl mx-auto px-6 xl:px-0'>
 
                 {/* --- Haupt-Überschrift --- */}
-                <h1 className={`text-5xl lg:text-6xl font-serif italic text-[var(--accent-color)] mb-10 border-b-2 border-[var(--accent-color)]/30 pb-4 pt-20 break-all`}>
+                <h1 className={`text-5xl lg:text-6xl font-serif italic text-[var(--accent-color)] mb-10 border-b-2 border-[color:color-mix(in_srgb,var(--accent-color)_30%,transparent)] pb-4 pt-20 break-all`}>
                     Datenschutzerklärung
                 </h1>
 
@@ -68,20 +68,20 @@ export default function Privacy() {
                 <Section id="mOverview" title="Übersicht der Verarbeitungen">
                     <p>Die nachfolgende Übersicht fasst die Arten der verarbeiteten Daten und die Zwecke ihrer Verarbeitung zusammen und verweist auf die betroffenen Personen.</p>
                     
-                    <h3 className={`text-xl font-semibold mb-3 mt-6 border-b border-[var(--accent-color)]/30 pb-1`}>Arten der verarbeiteten Daten</h3>
+                    <h3 className={`text-xl font-semibold mb-3 mt-6 border-b border-[color:color-mix(in_srgb,var(--accent-color)_30%,transparent)] pb-1`}>Arten der verarbeiteten Daten</h3>
                     <ul className='list-disc list-inside ml-4 space-y-1'>
                         <li>Bestandsdaten, Zahlungsdaten, Kontaktdaten, Inhaltsdaten, Vertragsdaten</li>
                         <li>Nutzungsdaten</li>
                         <li>Meta-, Kommunikations-, Verfahrens- und Protokolldaten</li>
                     </ul>
 
-                    <h3 className={`text-xl font-semibold mb-3 mt-6 border-b border-[var(--accent-color)]/30 pb-1`}>Kategorien betroffener Personen</h3>
+                    <h3 className={`text-xl font-semibold mb-3 mt-6 border-b border-[color:color-mix(in_srgb,var(--accent-color)_30%,transparent)] pb-1`}>Kategorien betroffener Personen</h3>
                     <ul className='list-disc list-inside ml-4 space-y-1'>
                         <li>Leistungsempfänger und Auftraggeber, Interessenten, Kommunikationspartner</li>
                         <li>Nutzer, Geschäfts- und Vertragspartner</li>
                     </ul>
 
-                    <h3 className={`text-xl font-semibold mb-3 mt-6 border-b border-[var(--accent-color)]/30 pb-1`}>Zwecke der Verarbeitung</h3>
+                    <h3 className={`text-xl font-semibold mb-3 mt-6 border-b border-[color:color-mix(in_srgb,var(--accent-color)_30%,transparent)] pb-1`}>Zwecke der Verarbeitung</h3>
                     <ul className='list-disc list-inside ml-4 space-y-1'>
                         <li>Erbringung vertraglicher Leistungen und Erfüllung vertraglicher Pflichten, Kommunikation, Sicherheitsmaßnahmen</li>
                         <li>Büro- und Organisationsverfahren, Feedback, Bereitstellung unseres Onlineangebotes und Nutzerfreundlichkeit</li>
@@ -91,7 +91,7 @@ export default function Privacy() {
                 
                 {/* --- Maßgebliche Rechtsgrundlagen --- */}
                 <Section id="m2427" title="Maßgebliche Rechtsgrundlagen">
-                    <h3 className={`text-xl font-semibold mb-3 border-b border-[var(--accent-color)]/30 pb-1`}>Maßgebliche Rechtsgrundlagen nach der DSGVO</h3>
+                    <h3 className={`text-xl font-semibold mb-3 border-b border-[color:color-mix(in_srgb,var(--accent-color)_30%,transparent)] pb-1`}>Maßgebliche Rechtsgrundlagen nach der DSGVO</h3>
                     <p>Im Folgenden erhalten Sie eine Übersicht der Rechtsgrundlagen der DSGVO, auf deren Basis wir personenbezogene Daten verarbeiten:</p>
                     <ul className='list-disc list-inside ml-4 space-y-2'>
                         <li>**Einwilligung:** Art. 6 Abs. 1 S. 1 lit. a) DSGVO</li>
@@ -125,7 +125,7 @@ export default function Privacy() {
                     <p>Wir löschen personenbezogene Daten, sobald die zugrundeliegenden Einwilligungen widerrufen werden oder keine weiteren rechtlichen Grundlagen für die Verarbeitung bestehen (wenn der Zweck entfällt oder die Daten nicht mehr benötigt werden).</p>
                     <p>Ausnahmen bestehen, wenn gesetzliche Pflichten (z.B. Archivierung für Steuerzwecke) oder die Rechtsverfolgung eine längere Aufbewahrung erfordern.</p>
                     
-                    <h3 className={`text-xl font-semibold mb-3 mt-6 border-b border-[var(--accent-color)]/30 pb-1`}>Gültige Fristen nach deutschem Recht:</h3>
+                    <h3 className={`text-xl font-semibold mb-3 mt-6 border-b border-[color:color-mix(in_srgb,var(--accent-color)_30%,transparent)] pb-1`}>Gültige Fristen nach deutschem Recht:</h3>
                     <ul className='list-disc list-inside ml-4 space-y-2'>
                         <li>**10 Jahre:** Aufbewahrungsfrist für Bücher, Rechnungen, Jahresabschlüsse und Buchungsbelege.</li>
                         <li>**6 Jahre:** Übrige Geschäftsunterlagen, empfangene und abgesandte Handels- oder Geschäftsbriefe.</li>

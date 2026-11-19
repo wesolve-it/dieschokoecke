@@ -40,13 +40,13 @@ export default function About() {
                     
                     {/* DEKORATIVER AKZENT: Fließende Schokoladen-Form */}
                     <div 
-                        className={`hidden lg:block absolute -top-8 right-1/4 w-32 h-32 bg-[var(--accent-color)]/10 rounded-full blur-xl swirl-pulse`} 
+                        className={`hidden lg:block absolute -top-8 right-1/4 w-32 h-32 bg-[color:color-mix(in_srgb,var(--accent-color)_10%,transparent)] rounded-full blur-xl swirl-pulse`} 
                         style={{animationDelay: '0.5s'}}
                     ></div>
                     
                     {/* Hauptüberschrift */}
                     <h2 
-                        className={`text-center text-4xl lg:text-5xl font-extralight mb-12 lg:mb-16 border-b-2 border-dashed border-[var(--accent-color)]/50 pb-4`}
+                        className={`text-center text-4xl lg:text-5xl font-extralight mb-12 lg:mb-16 border-b-2 border-dashed border-[color:color-mix(in_srgb,var(--accent-color)_50%,transparent)] pb-4`}
                         data-aos="fade-down"
                         data-aos-duration="800"
                     >
@@ -61,7 +61,7 @@ export default function About() {
                             
                             {/* Bild 2: Trüffel-Auswahl (HOVER-Effekt: 3D-Tilt) */}
                             <div 
-                                className={`group relative w-full max-w-xs mx-auto xl:max-w-none rounded-xl overflow-hidden shadow-2xl shadow-[var(--accent-color)]/20 transition-transform duration-500 hover:rotate-1`}
+                                className={`group relative w-full max-w-xs mx-auto xl:max-w-none rounded-xl overflow-hidden shadow-2xl shadow-[color:color-mix(in_srgb,var(--accent-color)_20%,transparent)] transition-transform duration-500 hover:rotate-1`}
                                 data-aos="fade-up"
                                 data-aos-duration="1000"
                             >
@@ -78,7 +78,7 @@ export default function About() {
 
                             {/* Bild 3: Verpackung/Detail (HOVER-Effekt: Text-Reveal) */}
                             <div 
-                                className={`hidden lg:block relative rounded-xl overflow-hidden shadow-lg shadow-[var(--accent-color)]/10 mt-8 group`}
+                                className={`hidden lg:block relative rounded-xl overflow-hidden shadow-lg shadow-[color:color-mix(in_srgb,var(--accent-color)_10%,transparent)] mt-8 group`}
                                 data-aos="fade-up"
                                 data-aos-duration="1000"
                                 data-aos-delay="300"
@@ -102,11 +102,11 @@ export default function About() {
                             
                             {/* Sektion 1: Begrüßung und Name */}
                             <div data-aos="fade-left" data-aos-duration="1000">
-                                <h1 className='text-3xl text-center lg:text-left font-light mb-4 lg:text-5xl border-b border-dashed border-[var(--accent-color)]/30 pb-2'>
+                                <h1 className='text-3xl text-center lg:text-left font-light mb-4 lg:text-5xl border-b border-dashed border-[color:color-mix(in_srgb,var(--accent-color)_30%,transparent)] pb-2'>
                                     Anja Scharf – Ihre Expertin für Genuss
                                 </h1>
                                 
-                                <p className={`font-light text-left text-lg leading-relaxed text-[var(--text-color)]/90`}>
+                                <p className={`font-light text-left text-lg leading-relaxed text-[color:color-mix(in_srgb,var(--text-color)_90%,transparent)]`}>
                                     Mein Name ist Anja Scharf. Geboren in Bochum und seit 30 Jahren im schönen Lauf zu Hause, stehe ich hinter der <span className='font-semibold'>SchokoEcke</span>. Als leidenschaftliche Liebhaberin von feinen Pralinen freue ich mich, Ihnen seit September 2024 die <span className='font-semibold'>exklusiven Kakao-Trüffel und Pralinen</span> der Manufaktur Selectinas anbieten zu dürfen.
                                 </p>
                             </div>
@@ -114,7 +114,7 @@ export default function About() {
                             {/* Sektion 2: Die Trüffel-Tradition */}
                             <div data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
                                 <h4 className={`text-2xl font-light text-[var(--accent-color)]`}>Die Tradition lebt weiter</h4>
-                                <p className={`font-light text-left text-lg leading-relaxed mt-2 text-[var(--text-color)]/90`}>
+                                <p className={`font-light text-left text-lg leading-relaxed mt-2 text-[color:color-mix(in_srgb,var(--text-color)_90%,transparent)]`}>
                                     Die Trüffel von Selectinas sind vielen Kennern noch aus der Zeit der Firma Mundi-Weine bekannt, die mittlerweile geschlossen ist. Es ist mir eine Ehre, diese beliebte Tradition fortzuführen und Ihnen die gewohnte große Auswahl an hochwertigen Genussmomenten wieder zugänglich zu machen. Jeder Trüffel wird sorgfältig ausgewählt, um höchste Qualität zu garantieren.
                                 </p>
                             </div>
@@ -129,7 +129,7 @@ export default function About() {
 
                                 {/* Kontakttext */}
                                 <div className='flex-1 text-center lg:text-left mt-6 lg:mt-0'>
-                                    <p className={`font-light text-xl leading-snug italic text-[var(--text-color)]/90`}>
+                                    <p className={`font-light text-xl leading-snug italic text-[color:color-mix(in_srgb,var(--text-color)_90%,transparent)]`}>
                                         Gerne dürfen Sie mich telefonisch, per Email oder WhatsApp kontaktieren.
                                     </p>
                                     <p className={`text-xl font-medium mt-3 text-[var(--accent-color)]`}>
@@ -138,7 +138,7 @@ export default function About() {
                                     <a 
                                         href="tel:+49 174 8130465" 
                                         onClick={handleContactClick}
-                                        className={`mt-4 inline-block text-lg font-semibold border-b border-transparent hover:border-[var(--accent-color)] text-[var(--cta-button-bg)] hover:text-[var(--text-color)] transition-all duration-300 
+                                        className={`mt-4 inline-block text-lg font-semibold border-b border-transparent hover:border-[var(--accent-color)] text-[var(--accent-color)] hover:text-[var(--text-color)] transition-all duration-300 
                                             ${isContactClicked ? `ring-4 ring-[var(--shine-color)] ring-offset-2 rounded-md` : ''}`}
                                     >
                                         Kontakt aufnehmen

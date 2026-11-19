@@ -37,7 +37,7 @@ const CouponModal = () => {
       >
         
         {/* 1. Visueller Header/Logo Bereich */}
-        <div className={`p-4 mb-4 rounded-lg bg-[var(--accent-color)]/10`}>
+        <div className={`p-4 mb-4 rounded-lg bg-[color:color-mix(in_srgb,var(--accent-color)_10%,transparent)]`}>
           <img 
             className='object-contain w-3/4 max-h-20 mx-auto' 
             src={require('../assets/n-land-1j9c4filjl4limt8zxul-logowide.png')} 

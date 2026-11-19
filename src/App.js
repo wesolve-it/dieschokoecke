@@ -27,6 +27,7 @@ function ScrollToTop() {
 
 function App() {
   const [products, setProducts] = useState([]);
+  const [productsStatus, setProductsStatus] = useState('loading');
   const [faqEntries, setFaqEntries] = useState([]);
 
   useEffect(() => {
@@ -44,8 +45,14 @@ function App() {
 
   useEffect(() => {
     client.getEntries({ content_type: 'product'})
-      .then((response) => setProducts(response.items))
-      .catch(console.error);
+      .then((response) => {
+        setProducts(response.items);
+        setProductsStatus('ready');
+      })
+      .catch((error) => {
+        console.error(error);
+        setProductsStatus('error');
+      });
 
     client.getEntries({content_type: 'faq'})
       .then((response) => setFaqEntries(response.items))
@@ -57,14 +64,16 @@ function App() {
       <BrowserRouter>
       <ScrollToTop />
       <Navigation />
+        <main id="inhalt">
         <Routes>
           <Route index element={<Home faqEntries={faqEntries} />} />
           <Route path="datenschutz" element={<Privacy />} />
           <Route path="kontakt" element={<Contact />} />
-          <Route path="produkte" element={<Products products={products} />} />
+          <Route path="produkte" element={<Products products={products} status={productsStatus} />} />
           <Route path="impressum" element={<Impressum />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        </main>
       <Footer />
       </BrowserRouter>
       </div>

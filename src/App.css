@@ -29,6 +29,7 @@
   --hero-from: #F5F5F5;
   --hero-via: #EDEBE4;
   --footer-bg: #4E342E;
+  --footer-muted: #CDB8AA;
   --page-bg: #FDFCFB;
 }
 
@@ -63,6 +64,7 @@
   --hero-from: #1B1411;
   --hero-via: #221915;
   --footer-bg: #120D0B;
+  --footer-muted: #B3A091;
   --page-bg: #1B1411;
 }
 
@@ -81,41 +83,17 @@ html, body {
   transition: background-color 300ms ease-out, color 300ms ease-out, border-color 300ms ease-out !important;
 }
 
-.App {
-  text-align: center;
+/* Browser-Oberflächen im Look der Seite */
+html {
+  scrollbar-color: var(--shine-color) var(--page-bg);
+  accent-color: var(--accent-strong);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+input, textarea {
+  caret-color: var(--accent-color);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 3px;
 }

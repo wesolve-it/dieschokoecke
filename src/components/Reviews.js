@@ -47,7 +47,7 @@ export default function Reviews() {
                 className='object-cover w-full h-full opacity-60' 
             />
             {/* Overlay, um das Bild zu dämpfen und dem Stil anzupassen */}
-            <div className={`absolute inset-0 bg-gradient-to-t from-[var(--light-bg)] to-[var(--accent-color)]/10`}></div>
+            <div className={`absolute inset-0 bg-gradient-to-t from-[var(--light-bg)] to-[color:color-mix(in_srgb,var(--accent-color)_10%,transparent)]`}></div>
         </div>
 
         {/* --- 2. Haupt-Inhalt Sektion --- */}
@@ -64,7 +64,7 @@ export default function Reviews() {
                 {reviews.map((review, index) => (
                     <div 
                         key={index}
-                        className={`bg-[var(--surface)] p-6 lg:p-8 rounded-xl shadow-xl border-t-4 border-[var(--accent-color)]/50 transition-transform duration-300 hover:scale-[1.02]`}
+                        className={`bg-[var(--surface)] p-6 lg:p-8 rounded-xl shadow-xl border border-[var(--line)] transition-transform duration-300 hover:scale-[1.02]`}
                         data-aos="fade-up"
                         data-aos-duration="1000"
                         data-aos-delay={review.delay}

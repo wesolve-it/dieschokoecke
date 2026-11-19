@@ -16,7 +16,7 @@ export default function Footer() {
                     <NavLink to="/" className="flex items-center flex-col">
                         {/* Helle Logo-Variante: Konturen und Schrift in Creme für den dunklen Hintergrund */}
                         <img loading="lazy" decoding="async" src={Chocolate} className="h-16 lg:h-24 transition-transform duration-300 hover:scale-[1.05]" alt="dieschokoecke Logo" />
-                        <span className={`self-center mt-3 text-sm tracking-widest uppercase text-[var(--logo-text)] font-light`}>
+                        <span className={`self-center mt-3 text-sm tracking-widest uppercase text-[var(--footer-muted)] font-light`}>
                             QUALITÄT IN SCHOKOLADE
                         </span>
                     </NavLink>
@@ -91,11 +91,11 @@ export default function Footer() {
                 </div>
             </div>
             
-            <hr className={`my-8 border-t border-[var(--accent-hover)]/30 lg:my-10`} />
+            <hr className={`my-8 border-t border-[color:color-mix(in_srgb,var(--accent-hover)_30%,transparent)] lg:my-10`} />
             
             {/* --- Copyright --- */}
             <div className="sm:flex sm:items-center sm:justify-center">
-                <span className={`text-sm text-[var(--logo-text)] font-light`}>
+                <span className={`text-sm text-[var(--footer-muted)] font-light`}>
                     ©2026 <a href="https://dieschokoecke.de" className={`hover:text-[var(--accent-hover)] transition-colors duration-200`}>dieschokoecke</a>. All Rights Reserved.
                 </span>
             </div>
