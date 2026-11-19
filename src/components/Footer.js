@@ -28,12 +28,12 @@ export default function Footer() {
                     {/* Information */}
                     <div>
                         <h2 className={`mb-6 text-base font-semibold uppercase tracking-wider text-[var(--accent-hover)]`}>Informationen</h2>
-                        <ul className={`text-[var(--light-text)] font-light space-y-3`}>
+                        <ul className={`text-[var(--light-text)] font-light`}>
                             <li>
-                                <NavLink to="produkte" className="hover:text-[var(--accent-hover)] transition-colors duration-200">Produkte</NavLink>
+                                <NavLink to="produkte" className="inline-flex items-center min-h-11 hover:text-[var(--accent-hover)] transition-colors duration-200">Produkte</NavLink>
                             </li>
                             <li>
-                                <button onClick={() => scrollToSection('faq')} className="hover:text-[var(--accent-hover)] transition-colors duration-200">FAQ</button>
+                                <button onClick={() => scrollToSection('faq')} className="inline-flex items-center min-h-11 hover:text-[var(--accent-hover)] transition-colors duration-200">FAQ</button>
                             </li>
                         </ul>
                     </div>
@@ -41,15 +41,15 @@ export default function Footer() {
                     {/* Kontakt */}
                     <div>
                         <h2 className={`mb-6 text-base font-semibold uppercase tracking-wider text-[var(--accent-hover)]`}>Kontakt</h2>
-                        <ul className={`text-[var(--light-text)] font-light space-y-3`}>
+                        <ul className={`text-[var(--light-text)] font-light`}>
                             <li>
-                                <NavLink to="kontakt" className="hover:text-[var(--accent-hover)] transition-colors duration-200">Kontaktiere uns</NavLink>
+                                <NavLink to="kontakt" className="inline-flex items-center min-h-11 hover:text-[var(--accent-hover)] transition-colors duration-200">Kontaktiere uns</NavLink>
                             </li>
                             <li>
-                                <a href="mailto:kontakt@dieschokoecke.de" className="hover:text-[var(--accent-hover)] transition-colors duration-200">Email</a>
+                                <a href="mailto:kontakt@dieschokoecke.de" className="inline-flex items-center min-h-11 hover:text-[var(--accent-hover)] transition-colors duration-200">Email</a>
                             </li>
                             <li>
-                                <a href="https://wa.me/491748130465" className="hover:text-[var(--accent-hover)] transition-colors duration-200">WhatsApp</a>
+                                <a href="https://wa.me/491748130465" className="inline-flex items-center min-h-11 hover:text-[var(--accent-hover)] transition-colors duration-200">WhatsApp</a>
                             </li>
                         </ul>
                     </div>
@@ -57,12 +57,12 @@ export default function Footer() {
                     {/* Rechtliches */}
                     <div>
                         <h2 className={`mb-6 text-base font-semibold uppercase tracking-wider text-[var(--accent-hover)]`}>Rechtliches</h2>
-                        <ul className={`text-[var(--light-text)] font-light space-y-3`}>
+                        <ul className={`text-[var(--light-text)] font-light`}>
                             <li>
-                                <NavLink to="impressum" className="hover:text-[var(--accent-hover)] transition-colors duration-200">Impressum</NavLink>
+                                <NavLink to="impressum" className="inline-flex items-center min-h-11 hover:text-[var(--accent-hover)] transition-colors duration-200">Impressum</NavLink>
                             </li>
                             <li>
-                                <NavLink to="datenschutz" className="hover:text-[var(--accent-hover)] transition-colors duration-200">Datenschutz</NavLink>
+                                <NavLink to="datenschutz" className="inline-flex items-center min-h-11 hover:text-[var(--accent-hover)] transition-colors duration-200">Datenschutz</NavLink>
                             </li>
                         </ul>
                     </div>
@@ -72,15 +72,15 @@ export default function Footer() {
                         <h2 className={`mb-6 text-base font-semibold uppercase tracking-wider text-[var(--accent-hover)]`}>Folge uns</h2>
                         
                         {/* Social Icons */}
-                        <div className="flex flex-row gap-x-4 mb-6">
+                        <div className="flex flex-row gap-x-1 -ml-2.5 mb-6">
                             {/* Instagram */}
-                            <a href="https://www.instagram.com/dieschokoecke/" className={`block transition-transform duration-300 hover:scale-[1.2]`}>
+                            <a href="https://www.instagram.com/dieschokoecke/" className={`flex items-center justify-center w-11 h-11 transition-transform duration-300 hover:scale-[1.2]`}>
                                 <img loading="lazy" decoding="async" src={Instagram} alt="Instagram Logo" className='h-6 filter brightness-150' /> {/* Helligkeit angepasst für dunklen Hintergrund */}
                                 <span className="sr-only">Instagram page</span>
                             </a>
                             
                             {/* Facebook (SVG beibehalten) */}
-                            <a href="https://www.instagram.com/dieschokoecke/" className={`text-[var(--light-text)] hover:text-[var(--accent-hover)] transition-colors duration-200 block transition-transform duration-300 hover:scale-[1.2]`}>
+                            <a href="https://www.instagram.com/dieschokoecke/" className={`text-[var(--light-text)] hover:text-[var(--accent-hover)] transition-colors duration-200 flex items-center justify-center w-11 h-11 transition-transform duration-300 hover:scale-[1.2]`}>
                                 <svg className="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 8 19">
                                     <path fillRule="evenodd" d="M6.135 3H8V0H6.135a4.147 4.147 0 0 0-4.142 4.142V6H0v3h2v9.938h3V9h2.021l.592-3H5V3.591A.6.6 0 0 1 5.592 3h.543Z" clipRule="evenodd"/>
                                 </svg>
