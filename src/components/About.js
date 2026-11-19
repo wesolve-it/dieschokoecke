@@ -1,5 +1,5 @@
 import React from 'react';
-import Image1 from '../assets/image1.webp'; // Bild Anja Scharf (Portrait)
+import PortraitAnja from '../assets/anja-scharf.jpg'; // Anja Scharf mit Hund
 import Image2 from '../assets/image2.webp'; // Bild Trüffel-Auswahl
 import Image3 from '../assets/image3.webp'; // Bild Verpackung/Detail
 
@@ -122,10 +122,12 @@ export default function About() {
                             {/* Sektion 3: Portrait und Kontakt-CTA (Micro-Interaction: Klick-Rückmeldung) */}
                             <div className='lg:flex lg:gap-8 items-center pt-4' data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
                                 
-                                {/* Bild 1: Portrait */}
-                                <div className={`flex-shrink-0 mx-auto w-48 h-48 lg:w-40 lg:h-40 rounded-full overflow-hidden border-4 border-[var(--accent-color)] shadow-xl transition-all duration-500 hover:rotate-2 hover:scale-[1.02]`}>
-                                    <img loading="lazy" decoding="async" src={Image1} alt="Portrait von Anja Scharf" className='w-full h-full object-cover' />
-                                </div>
+                                {/* Portrait: Anja Scharf mit Hund (Hochformat, damit der Hund mit im Bild bleibt) */}
+                                <figure className='flex-shrink-0 mx-auto w-56 sm:w-64 lg:w-60 rotate-[-2deg] transition-transform duration-500 hover:rotate-0'>
+                                    <div className='rounded-2xl overflow-hidden border-4 border-[var(--accent-color)] shadow-xl shadow-[color:color-mix(in_srgb,var(--accent-color)_20%,transparent)]'>
+                                        <img loading="lazy" decoding="async" src={PortraitAnja} width="640" height="960" alt="Anja Scharf sitzt lächelnd im Freien und hält ihren schwarzen Labrador im Arm" className='w-full aspect-[4/5] object-cover object-[50%_30%]' />
+                                    </div>
+                                </figure>
 
                                 {/* Kontakttext */}
                                 <div className='flex-1 text-center lg:text-left mt-6 lg:mt-0'>
