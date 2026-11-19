@@ -9,7 +9,7 @@ export default function Impressum() {
         </h1>
 
         {/* --- 1. Allgemeine Angaben --- */}
-        <section className='mb-10 p-6 rounded-xl bg-white shadow-lg'>
+        <section className='mb-10 p-6 rounded-xl bg-[var(--surface)] shadow-lg'>
           <h2 className={`text-2xl font-semibold mb-4 border-l-4 border-[var(--accent-color)] pl-3`}>
             Verantwortlich für den Inhalt
           </h2>
@@ -22,7 +22,7 @@ export default function Impressum() {
         </section>
 
         {/* --- 2. Kontakt --- */}
-        <section className='mb-10 p-6 rounded-xl bg-white shadow-lg'>
+        <section className='mb-10 p-6 rounded-xl bg-[var(--surface)] shadow-lg'>
           <h2 className={`text-2xl font-semibold mb-4 border-l-4 border-[var(--accent-color)] pl-3`}>
             Kontakt
           </h2>
@@ -44,7 +44,7 @@ export default function Impressum() {
 
         {/* --- 3. Rechtliche Hinweise (Grid oder Container) --- */}
         <div className='grid lg:grid-cols-2 gap-8'>
-            <section className='p-6 rounded-xl bg-white shadow-lg'>
+            <section className='p-6 rounded-xl bg-[var(--surface)] shadow-lg'>
                 <h2 className={`text-xl font-semibold mb-3 border-l-4 border-[var(--accent-color)]/50 pl-3`}>
                     EU-Streitschlichtung
                 </h2>
@@ -62,7 +62,7 @@ export default function Impressum() {
                 </p>
             </section>
 
-            <section className='p-6 rounded-xl bg-white shadow-lg'>
+            <section className='p-6 rounded-xl bg-[var(--surface)] shadow-lg'>
                 <h2 className={`text-xl font-semibold mb-3 border-l-4 border-[var(--accent-color)]/50 pl-3`}>
                     Verbraucherstreitbeilegung
                 </h2>
@@ -73,7 +73,7 @@ export default function Impressum() {
         </div>
 
         {/* --- Quelle --- */}
-        <p className='mt-12 text-sm text-gray-500 font-light text-center'>
+        <p className='mt-12 text-sm text-[var(--muted-text)] font-light text-center'>
             Quelle: <a href="https://www.e-recht24.de/impressum-generator.html" className='hover:underline'>e-recht24.de Impressum Generator</a>
         </p>
 

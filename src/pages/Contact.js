@@ -54,7 +54,7 @@ export default function Contact() {
                             type="text" 
                             id="name" 
                             name="Name" 
-                            className={`block w-full p-3 text-base rounded-lg border-2 border-gray-200 
+                            className={`block w-full p-3 text-base rounded-lg border-2 border-[var(--line)] bg-[var(--light-bg)] text-[var(--text-color)] placeholder:text-[var(--muted-text)] 
                                        focus:ring-[var(--accent-color)] focus:border-[var(--accent-color)] 
                                        transition-all duration-200`} 
                             placeholder="Vorname Nachname" 
@@ -69,7 +69,7 @@ export default function Contact() {
                             type="email" 
                             id="email" 
                             name="Email" 
-                            className={`block w-full p-3 text-base rounded-lg border-2 border-gray-200 
+                            className={`block w-full p-3 text-base rounded-lg border-2 border-[var(--line)] bg-[var(--light-bg)] text-[var(--text-color)] placeholder:text-[var(--muted-text)] 
                                        focus:ring-[var(--accent-color)] focus:border-[var(--accent-color)] 
                                        transition-all duration-200`} 
                             placeholder="name@adresse.com" 
@@ -84,7 +84,7 @@ export default function Contact() {
                             type="text" 
                             id="subject" 
                             name="Betreff" 
-                            className={`block w-full p-3 text-base rounded-lg border-2 border-gray-200 
+                            className={`block w-full p-3 text-base rounded-lg border-2 border-[var(--line)] bg-[var(--light-bg)] text-[var(--text-color)] placeholder:text-[var(--muted-text)] 
                                        focus:ring-[var(--accent-color)] focus:border-[var(--accent-color)] 
                                        transition-all duration-200`} 
                             placeholder="z.B. Bestellung, Geschäftsanfrage oder Rückfrage" 
@@ -99,7 +99,7 @@ export default function Contact() {
                             id="message" 
                             rows="6" 
                             name="Nachricht" 
-                            className={`block w-full p-3 text-base rounded-lg border-2 border-gray-200 
+                            className={`block w-full p-3 text-base rounded-lg border-2 border-[var(--line)] bg-[var(--light-bg)] text-[var(--text-color)] placeholder:text-[var(--muted-text)] 
                                        focus:ring-[var(--accent-color)] focus:border-[var(--accent-color)] 
                                        transition-all duration-200`} 
                             placeholder="Bitte beschreiben Sie hier Ihre Bestellung oder Ihr Anliegen..." 
@@ -113,7 +113,7 @@ export default function Contact() {
                         className={`mt-4 w-full sm:w-auto py-3 px-8 text-lg font-semibold 
                                    text-white rounded-full bg-[var(--cta-button-bg)] 
                                    transition-all duration-300 shadow-xl 
-                                   hover:bg-[var(--accent-color)] hover:scale-[1.02] 
+                                   hover:bg-[var(--accent-strong)] hover:scale-[1.02] 
                                    focus:ring-4 focus:ring-[var(--accent-color)]/50`}
                     >
                         Nachricht senden

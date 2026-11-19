@@ -1,10 +1,17 @@
-/* Variables */
+/* Variables – helles Theme (Standard) */
 :root {
+  color-scheme: light;
   --text-color: #3E2723;
+  --heading-color: #4E342E;
+  --subtle-text: #5D4037;
+  --muted-text: #7A6A62;
   --accent-color: #795548;
+  --brown-soft: #8D6E63;
   --light-bg: #FDFCFB;
   --cta-bg: #EAE0D7;
   --cta-button-bg: #6D4C41;
+  --accent-strong: #795548;
+  --button-hover: #3E2723;
   --modal-bg: #fdfcfb;
   --button-bg: #6d4c41;
   --header-bg: #ffffff;
@@ -16,6 +23,62 @@
   --logo-text: #a1887f;
   --star-color: #f5b300;
   --section-bg: #FFFFFF;
+  --surface: #FFFFFF;
+  --line: #E8E1DA;
+  --card-shadow: rgba(62, 39, 35, 0.12);
+  --hero-from: #F5F5F5;
+  --hero-via: #EDEBE4;
+  --footer-bg: #4E342E;
+  --page-bg: #FDFCFB;
+}
+
+/* Dunkles Theme: warme Kakao-Töne statt Schwarz */
+:root.dark {
+  color-scheme: dark;
+  --text-color: #EFE5DA;
+  --heading-color: #F5EBDF;
+  --subtle-text: #D2C1B1;
+  --muted-text: #A99787;
+  --accent-color: #C99B74;
+  --brown-soft: #C4A58C;
+  --light-bg: #1B1411;
+  --cta-bg: #2A1F1A;
+  --cta-button-bg: #85563B;
+  --accent-strong: #8F5F42;
+  --button-hover: #6B4430;
+  --modal-bg: #241A16;
+  --button-bg: #85563B;
+  --header-bg: #1B1411;
+  --form-bg: #241A16;
+  --new-bg-color: #211814;
+  --shine-color: #5E4536;
+  --light-text: #EAE0D7;
+  --accent-hover: #E0BE9C;
+  --logo-text: #C2A796;
+  --star-color: #F5B300;
+  --section-bg: #241A16;
+  --surface: #2A1F1A;
+  --line: #3D2E27;
+  --card-shadow: rgba(0, 0, 0, 0.45);
+  --hero-from: #1B1411;
+  --hero-via: #221915;
+  --footer-bg: #120D0B;
+  --page-bg: #1B1411;
+}
+
+html, body {
+  background-color: var(--page-bg);
+  color: var(--text-color);
+}
+
+::selection {
+  background: var(--accent-color);
+  color: var(--surface);
+}
+
+/* Sanfter Wechsel zwischen den Themes (nur während des Umschaltens aktiv) */
+.theme-transition, .theme-transition *, .theme-transition *::before, .theme-transition *::after {
+  transition: background-color 300ms ease-out, color 300ms ease-out, border-color 300ms ease-out !important;
 }
 
 .App {

@@ -32,7 +32,7 @@ export default function Products({products}) {
         {/* Optional: Wenn keine Produkte vorhanden sind */}
         {products.length === 0 && (
           <div className='text-center py-20'>
-            <p className='text-xl text-gray-500'>Aktuell sind keine Produkte verfügbar.</p>
+            <p className='text-xl text-[var(--muted-text)]'>Aktuell sind keine Produkte verfügbar.</p>
           </div>
         )}
       </div>
@@ -56,7 +56,7 @@ export default function Products({products}) {
             <a 
               href="tel:+49 174 8130465" 
               className={`px-8 py-3 text-lg font-semibold rounded-full text-white bg-[var(--cta-button-bg)] transition-all duration-300 shadow-md 
-                hover:bg-[var(--accent-color)] hover:shadow-lg`}
+                hover:bg-[var(--accent-strong)] hover:shadow-lg`}
             >
               Jetzt anrufen oder WhatsApp
             </a>
@@ -64,7 +64,7 @@ export default function Products({products}) {
             {/* E-Mail CTA */}
             <a 
               href="mailto:kontakt@dieschokoecke.de" 
-              className={`px-8 py-3 text-lg font-semibold rounded-full bg-white border-2 border-[var(--cta-button-bg)] text-[var(--cta-button-bg)] transition-all duration-300 shadow-md 
+              className={`px-8 py-3 text-lg font-semibold rounded-full bg-[var(--surface)] border-2 border-[var(--cta-button-bg)] text-[var(--accent-color)] transition-all duration-300 shadow-md 
                 hover:bg-[var(--cta-button-bg)] hover:text-white`}
             >
               E-Mail senden

@@ -29,7 +29,7 @@ export default function Products() {
           {/* TEXT-Sektion (Flex-1) */}
           <div className='lg:flex-1 lg:my-auto lg:pl-16 order-2' data-aos="fade-left" data-aos-duration="1000">
             
-            <h2 className={`text-4xl text-center mb-6 lg:text-6xl lg:text-left font-extralight leading-snug text-[#4E342E]`}>
+            <h2 className={`text-4xl text-center mb-6 lg:text-6xl lg:text-left font-extralight leading-snug text-[var(--heading-color)]`}>
               Handwerkliche Qualität <span className='text-xl lg:text-3xl font-light'>bis</span> 
               <span className={`font-serif italic text-[var(--accent-color)] font-normal ml-2`}>ins Detail</span>
             </h2>
@@ -63,7 +63,7 @@ export default function Products() {
           <div className='lg:flex-1 order-1 mt-10 lg:mt-0' data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
             {/* Bild mit Floating-Animation und starkem Schatten */}
             <div className='float-truffle-products max-w-lg mx-auto lg:max-w-none'>
-                <img 
+                <img loading="lazy" decoding="async" 
                     src={Truffel} 
                     alt="Mehrere Trüffel in einer Auswahl" 
                     className='w-5/6 mx-auto lg:w-full h-auto object-contain drop-shadow-2xl transition-transform duration-500 hover:rotate-1'

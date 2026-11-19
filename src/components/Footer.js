@@ -7,7 +7,7 @@ export default function Footer() {
     const scrollToSection = useSectionNavigation();
 
   return (
-    <footer className={`bg-[#4E342E] text-[#EAE0D7]`} data-aos="fade-up" data-aos-duration="1000">
+    <footer className={`bg-[var(--footer-bg)] text-[var(--light-text)]`} data-aos="fade-up" data-aos-duration="1000">
         <div className="mx-auto w-full max-w-screen-xl p-6 py-10 lg:py-16">
             <div className="md:flex md:justify-between">
                 
@@ -15,7 +15,7 @@ export default function Footer() {
                 <div className="mb-10 md:mb-0 md:w-1/4">
                     <NavLink to="/" className="flex items-center flex-col">
                         {/* Helle Logo-Variante: Konturen und Schrift in Creme für den dunklen Hintergrund */}
-                        <img src={Chocolate} className="h-16 lg:h-24 transition-transform duration-300 hover:scale-[1.05]" alt="dieschokoecke Logo" />
+                        <img loading="lazy" decoding="async" src={Chocolate} className="h-16 lg:h-24 transition-transform duration-300 hover:scale-[1.05]" alt="dieschokoecke Logo" />
                         <span className={`self-center mt-3 text-sm tracking-widest uppercase text-[var(--logo-text)] font-light`}>
                             QUALITÄT IN SCHOKOLADE
                         </span>
@@ -75,7 +75,7 @@ export default function Footer() {
                         <div className="flex flex-row gap-x-4 mb-6">
                             {/* Instagram */}
                             <a href="https://www.instagram.com/dieschokoecke/" className={`block transition-transform duration-300 hover:scale-[1.2]`}>
-                                <img src={Instagram} alt="Instagram Logo" className='h-6 filter brightness-150' /> {/* Helligkeit angepasst für dunklen Hintergrund */}
+                                <img loading="lazy" decoding="async" src={Instagram} alt="Instagram Logo" className='h-6 filter brightness-150' /> {/* Helligkeit angepasst für dunklen Hintergrund */}
                                 <span className="sr-only">Instagram page</span>
                             </a>
                             

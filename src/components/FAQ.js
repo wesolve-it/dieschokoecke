@@ -21,7 +21,7 @@ export function ContactCTA() {
           </p>
           <a 
             href="kontakt" 
-            className={`inline-block px-10 py-4 rounded-full font-semibold text-white bg-[var(--accent-color)] shadow-lg transition-all duration-300 hover:bg-[var(--text-color)] hover:scale-105`}
+            className={`inline-block px-10 py-4 rounded-full font-semibold text-white bg-[var(--accent-strong)] shadow-lg transition-all duration-300 hover:bg-[var(--button-hover)] hover:scale-105`}
           >
             Jetzt Kontakt aufnehmen
           </a>
@@ -54,7 +54,7 @@ export default function FAQ({ faqEntries }) {
           {faqEntries.map((faq, index) => (
             <div 
               key={index} 
-              className={`bg-white rounded-2xl shadow-md transition-all duration-300 overflow-hidden
+              className={`bg-[var(--surface)] rounded-2xl shadow-md transition-all duration-300 overflow-hidden
                 ${openIndex === index ? `ring-1 ring-[var(--accent-color)]/30 shadow-xl` : 'hover:shadow-lg'}`}
             >
               <h2>
@@ -62,14 +62,14 @@ export default function FAQ({ faqEntries }) {
                   type="button"
                   onClick={() => toggleAccordion(index)}
                   className={`flex items-center justify-between text-left w-full py-6 px-8 transition-all duration-300
-                    ${openIndex === index ? `bg-[var(--accent-color)]/5` : `bg-white`}`}
+                    ${openIndex === index ? `bg-[var(--accent-color)]/5` : `bg-[var(--surface)]`}`}
                 >
                   <span className={`text-lg lg:text-xl font-medium ${openIndex === index ? `text-[var(--accent-color)]` : `text-[var(--text-color)]`}`}>
                     {faq.fields.question}
                   </span>
                   
                   <svg
-                    className={`w-5 h-5 shrink-0 transition-transform duration-500 ${openIndex === index ? 'rotate-180 text-[var(--accent-color)]' : 'text-gray-400'}`}
+                    className={`w-5 h-5 shrink-0 transition-transform duration-500 ${openIndex === index ? 'rotate-180 text-[var(--accent-color)]' : 'text-[var(--muted-text)]'}`}
                     xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6"
                   >
                     <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 5 5 1 1 5"/>
@@ -85,7 +85,7 @@ export default function FAQ({ faqEntries }) {
               >
                 <div className='overflow-hidden'>
                   {/* pt-5 sorgt für den nötigen Abstand zum Header-Trenner */}
-                  <div className={`pt-5 pb-8 px-8 text-[var(--text-color)]/80 font-light text-base lg:text-lg leading-relaxed border-t border-gray-100 mx-8`}>
+                  <div className={`pt-5 pb-8 px-8 text-[var(--text-color)]/80 font-light text-base lg:text-lg leading-relaxed border-t border-[var(--line)] mx-8`}>
                     {faq.fields.answer}
                   </div>
                 </div>

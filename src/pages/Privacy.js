@@ -2,7 +2,7 @@ const ACCENT_COLOR = '#795548';   // Akzent-Braun
 
 // Hilfskomponente zum Formatieren von Sektionen
 const Section = ({ id, title, children }) => (
-    <section id={id} className='mb-12 p-6 rounded-xl bg-white shadow-lg'>
+    <section id={id} className='mb-12 p-6 rounded-xl bg-[var(--surface)] shadow-lg'>
         <h2 className={`text-3xl font-semibold mb-6 border-l-4 border-[var(--accent-color)] pl-3`}>
             {title}
         </h2>
@@ -55,7 +55,7 @@ export default function Privacy() {
                 <Section id="m4158" title="Präambel">
                     <p>Mit der folgenden Datenschutzerklärung möchten wir Sie darüber aufklären, welche Arten Ihrer personenbezogenen Daten (nachfolgend auch kurz als "Daten" bezeichnet) wir zu welchen Zwecken und in welchem Umfang im Rahmen der Bereitstellung unserer Applikation verarbeiten.</p>
                     <p>Die verwendeten Begriffe sind nicht geschlechtsspezifisch.</p>
-                    <p className='text-sm text-gray-500 mt-6'>Stand: 8. Oktober 2024</p>
+                    <p className='text-sm text-[var(--muted-text)] mt-6'>Stand: 8. Oktober 2024</p>
                 </Section>
                 
                 {/* --- Verantwortlicher --- */}

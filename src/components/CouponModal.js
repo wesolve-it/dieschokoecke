@@ -65,7 +65,7 @@ const CouponModal = () => {
                 target="_blank" 
                 rel="noopener noreferrer"
                 className={`px-6 py-2 font-semibold rounded-full w-2/3 mx-auto lg:w-auto lg:mx-0 text-center
-                    bg-[var(--accent-color)] text-white transition-all duration-300 shadow-md 
+                    bg-[var(--accent-strong)] text-white transition-all duration-300 shadow-md 
                     hover:bg-[var(--button-bg)] hover:scale-105 text-sm sm:text-base`}
             >
                 Details
@@ -74,8 +74,8 @@ const CouponModal = () => {
             {/* Schließen Button */}
             <button
                 className={`px-6 py-2 font-semibold rounded-full w-2/3 mx-auto lg:w-auto lg:mx-0 text-center
-                    bg-gray-200 text-gray-700 transition-colors duration-300 
-                    hover:bg-gray-300 hover:text-gray-800 text-sm sm:text-base`}
+                    bg-[var(--line)] text-[var(--text-color)] transition-colors duration-300 
+                    hover:opacity-80 text-sm sm:text-base`}
                 onClick={closeModal}
             >
                 Später erinnern

@@ -1,7 +1,7 @@
 import React from 'react';
-import Image1 from '../assets/image1.png'; // Bild Anja Scharf (Portrait)
-import Image2 from '../assets/image2.png'; // Bild Trüffel-Auswahl
-import Image3 from '../assets/image3.png'; // Bild Verpackung/Detail
+import Image1 from '../assets/image1.webp'; // Bild Anja Scharf (Portrait)
+import Image2 from '../assets/image2.webp'; // Bild Trüffel-Auswahl
+import Image3 from '../assets/image3.webp'; // Bild Verpackung/Detail
 
 import { Element } from 'react-scroll';
 
@@ -65,7 +65,7 @@ export default function About() {
                                 data-aos="fade-up"
                                 data-aos-duration="1000"
                             >
-                                <img 
+                                <img loading="lazy" decoding="async" 
                                     src={Image2} 
                                     alt="Detailaufnahme von Trüffeln" 
                                     className='w-full h-56 md:h-64 xl:h-[400px] object-cover transition-transform duration-500 group-hover:scale-[1.08] group-hover:brightness-110'
@@ -83,7 +83,7 @@ export default function About() {
                                 data-aos-duration="1000"
                                 data-aos-delay="300"
                             >
-                                <img 
+                                <img loading="lazy" decoding="async" 
                                     src={Image3} 
                                     alt="Bild einer Geschenkverpackung" 
                                     className='w-full h-auto object-cover lg:h-[200px] opacity-90 transition-transform duration-500 group-hover:scale-[1.05]'
@@ -124,7 +124,7 @@ export default function About() {
                                 
                                 {/* Bild 1: Portrait */}
                                 <div className={`flex-shrink-0 mx-auto w-48 h-48 lg:w-40 lg:h-40 rounded-full overflow-hidden border-4 border-[var(--accent-color)] shadow-xl transition-all duration-500 hover:rotate-2 hover:scale-[1.02]`}>
-                                    <img src={Image1} alt="Portrait von Anja Scharf" className='w-full h-full object-cover' />
+                                    <img loading="lazy" decoding="async" src={Image1} alt="Portrait von Anja Scharf" className='w-full h-full object-cover' />
                                 </div>
 
                                 {/* Kontakttext */}
@@ -138,7 +138,7 @@ export default function About() {
                                     <a 
                                         href="tel:+49 174 8130465" 
                                         onClick={handleContactClick}
-                                        className={`mt-4 inline-block text-lg font-semibold border-b border-transparent hover:border-[var(--accent-color)] text-[#6D4C41] hover:text-black transition-all duration-300 
+                                        className={`mt-4 inline-block text-lg font-semibold border-b border-transparent hover:border-[var(--accent-color)] text-[var(--cta-button-bg)] hover:text-[var(--text-color)] transition-all duration-300 
                                             ${isContactClicked ? `ring-4 ring-[var(--shine-color)] ring-offset-2 rounded-md` : ''}`}
                                     >
                                         Kontakt aufnehmen

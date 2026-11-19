@@ -6,7 +6,7 @@ export default function Product({ product }) {
     // ACHTUNG: Der umschließende Container muss nun h-full sein, um die Höhe des höchsten Elements im Grid zu übernehmen.
     <div className={`
         w-full h-full max-w-sm mx-auto
-        bg-[#FFFFFF] rounded-xl overflow-hidden shadow-2xl shadow-gray-200 
+        bg-[var(--surface)] rounded-xl overflow-hidden shadow-2xl shadow-[var(--card-shadow)] 
         transition-all duration-500 
         group 
         hover:shadow-3xl hover:shadow-[#795548]/20 hover:scale-[1.03]
@@ -16,7 +16,7 @@ export default function Product({ product }) {
       
       {/* --- Produktbild (Nicht dehnbar) --- */}
       <div className="relative overflow-hidden flex-shrink-0">
-        <img 
+        <img loading="lazy" decoding="async" 
           className="aspect-square sm:aspect-auto sm:h-64 lg:h-80 w-full object-cover object-center 
           transition-transform duration-500 group-hover:scale-[1.1] group-hover:rotate-1" 
           src={image.fields.file.url} 
@@ -56,7 +56,7 @@ export default function Product({ product }) {
           {/* <button
             className={`
                 px-5 py-2 text-sm uppercase tracking-wider font-semibold 
-                rounded-full bg-[var(--accent-color)] text-white 
+                rounded-full bg-[var(--accent-strong)] text-white 
                 transition-all duration-300 shadow-md 
                 hover:bg-[${TEXT_COLOR}] hover:shadow-lg hover:scale-[1.05]
             `}

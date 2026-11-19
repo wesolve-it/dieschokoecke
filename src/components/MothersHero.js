@@ -1,10 +1,10 @@
 import React from 'react';
 import { Element } from 'react-scroll';
-import Flowers from '../assets/flowers.png';
+import Flowers from '../assets/flowers.webp';
 
 export default function MothersHero() {
   return (
-    <Element className='bg-mothersGreen text-gray-500 py-10 lg:pt-16' id="home" name="home">
+    <Element className='bg-mothersGreen text-[var(--muted-text)] py-10 lg:pt-16' id="home" name="home">
           <div className='max-w-screen-xl mx-auto px-6 xl:px-0'>
           <h1 className='text-center text-4xl lg:text-8xl'>Muttertagsaktion <span className='italic font-light font-serif'>30%</span></h1>
           <div className='lg:flex'>

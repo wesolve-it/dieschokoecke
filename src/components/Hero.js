@@ -23,7 +23,7 @@ export default function Hero() {
       <style>{customStyles}</style>
 
       <Element 
-        className='relative bg-gradient-to-br from-[#F5F5F5] via-[#EDEBE4] to-[#EAE0D7] text-[#3E2723] py-10 xl:pt-20 overflow-hidden min-h-[70vh]'
+        className='relative bg-gradient-to-br from-[var(--hero-from)] via-[var(--hero-via)] to-[var(--cta-bg)] text-[var(--text-color)] py-10 xl:pt-20 overflow-hidden min-h-[70vh]'
         id="home" 
         name="home"
       >
@@ -35,11 +35,11 @@ export default function Hero() {
             
             {/* Kopfzeile */}
             <h1 
-                className='text-center text-4xl md:text-6xl xl:text-8xl text-[#4E342E]'
+                className='text-center text-4xl md:text-6xl xl:text-8xl text-[var(--heading-color)]'
                 data-aos="fade-down"
                 data-aos-duration="800"
             >
-                die <span className='italic font-light font-serif text-[#6D4C41]'>schokoecke</span>
+                die <span className='italic font-light font-serif text-[var(--accent-color)]'>schokoecke</span>
             </h1>
 
             <div className='xl:flex xl:items-center mt-10 xl:mt-16'>
@@ -52,10 +52,10 @@ export default function Hero() {
                 >
                     <h2 className='text-center text-3xl md:text-5xl font-light xl:text-7xl xl:font-extralight xl:text-left mt-6 xl:mt-0 leading-tight'>
                         Belgische<br/>
-                        <span className='text-[#8D6E63] font-normal'>Pralinen</span>
+                        <span className='text-[var(--brown-soft)] font-normal'>Pralinen</span>
                     </h2>
                     
-                    <h3 className='text-center xl:text-left mt-4 xl:mt-6 font-light text-lg xl:text-xl text-[#5D4037] max-w-lg mx-auto xl:mx-0'>
+                    <h3 className='text-center xl:text-left mt-4 xl:mt-6 font-light text-lg xl:text-xl text-[var(--subtle-text)] max-w-lg mx-auto xl:mx-0'>
                         Hallo, schön dass du in der SchokoEcke stöberst. Bei mir gibt es hochwertige belgische Pralinen der Firma <span className='font-semibold'>Selectinas</span>. Viel Spaß beim Entdecken des <span className='font-semibold'>puren Genusses</span>.
                     </h3>
 
@@ -63,7 +63,7 @@ export default function Hero() {
                     <div className='mt-8 flex justify-center xl:justify-start'>
                       <a href="/produkte">
                         <button 
-                            className='px-10 py-4 bg-[#6D4C41] text-white rounded-full text-lg font-medium hover:bg-[#8D6E63] transition-all duration-300 shadow-xl shadow-[#6D4C41]/30 hover:scale-[1.03]'
+                            className='px-10 py-4 bg-[var(--cta-button-bg)] text-white rounded-full text-lg font-medium hover:bg-[var(--brown-soft)] transition-all duration-300 shadow-xl shadow-[#6D4C41]/30 hover:scale-[1.03]'
                         >
                             Zum Sortiment
                         </button>

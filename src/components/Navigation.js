@@ -1,5 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Logo from '../assets/FullLogo_Transparent_NoBuffer.png';
+import LogoLight from '../assets/FullLogo_Light.png';
+import { MoonIcon, SunIcon } from '@heroicons/react/24/outline';
+import useTheme from '../hooks/useTheme';
 import { NavLink } from 'react-router-dom';
 import useSectionNavigation from '../hooks/useSectionNavigation';
 
@@ -7,6 +10,8 @@ export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const scrollToSection = useSectionNavigation();
+  const { theme, toggleTheme } = useTheme();
+  const isDark = theme === 'dark';
   const scrollFrame = useRef(null);
 
   // --- SCROLL-EFFEKT LOGIK ---
@@ -53,12 +58,25 @@ export default function Navigation() {
         {/* --- Logo: Skaliert beim Scrollen --- */}
         <NavLink to="/" onClick={() => handleScrollToSection('home')} className="flex items-center group">
             <img 
-                src={Logo} 
+                src={isDark ? LogoLight : Logo} 
                 className={`transition-all duration-500 object-contain ${isScrolled ? 'h-10' : 'h-12 lg:h-14'}`} 
                 alt="dieschokoecke Logo" 
             />
         </NavLink>
 
+        <div className="flex items-center gap-2 md:hidden">
+        {/* --- Theme-Umschalter --- */}
+        <button
+          onClick={toggleTheme}
+          type="button"
+          aria-label={isDark ? 'Helles Design aktivieren' : 'Dunkles Design aktivieren'}
+          title={isDark ? 'Helles Design' : 'Dunkles Design'}
+          className="inline-flex items-center justify-center w-10 h-10 rounded-full text-[var(--text-color)]
+                     border border-[var(--line)] hover:border-[var(--accent-color)] hover:text-[var(--accent-color)]
+                     focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-color)] transition-colors"
+        >
+          {isDark ? <SunIcon className="w-5 h-5" /> : <MoonIcon className="w-5 h-5" />}
+        </button>
         {/* --- Mobile Hamburger Button (Kein blauer Rahmen mehr!) --- */}
         <button
           onClick={toggleMenu}
@@ -74,12 +92,13 @@ export default function Navigation() {
             <span className={`absolute block h-0.5 w-6 bg-current transition-all duration-300 ${isMenuOpen ? '-rotate-45 top-2' : 'top-4'}`}></span>
           </div>
         </button>
+        </div>
 
         {/* --- Navigationslinks --- */}
         <div className={`
           ${isMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0 md:translate-y-0 md:opacity-100'}
           absolute md:relative top-full left-0 w-full md:top-auto md:w-auto transition-all duration-500 ease-in-out
-          bg-white md:bg-transparent shadow-2xl md:shadow-none z-[-1] md:z-auto
+          bg-[var(--surface)] md:bg-transparent shadow-2xl md:shadow-none z-[-1] md:z-auto
         `}>
           <ul className="flex flex-col md:flex-row items-center p-8 md:p-0 md:space-x-8 font-light text-lg">
             
@@ -116,12 +135,26 @@ export default function Navigation() {
                 className={`
                   inline-flex items-center justify-center px-8 py-2.5 rounded-full text-white
                   bg-[var(--cta-button-bg)] transition-all duration-300 shadow-md 
-                  hover:bg-[var(--text-color)] hover:shadow-xl hover:scale-105 active:scale-95
+                  hover:bg-[var(--button-hover)] hover:shadow-xl hover:scale-105 active:scale-95
                   text-base font-semibold w-full md:w-auto
                 `}
               >
                 Kontakt aufnehmen
               </NavLink>
+            </li>
+            <li className="hidden md:block">
+              {/* --- Theme-Umschalter --- */}
+        <button
+          onClick={toggleTheme}
+          type="button"
+          aria-label={isDark ? 'Helles Design aktivieren' : 'Dunkles Design aktivieren'}
+          title={isDark ? 'Helles Design' : 'Dunkles Design'}
+          className="inline-flex items-center justify-center w-10 h-10 rounded-full text-[var(--text-color)]
+                     border border-[var(--line)] hover:border-[var(--accent-color)] hover:text-[var(--accent-color)]
+                     focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-color)] transition-colors"
+        >
+          {isDark ? <SunIcon className="w-5 h-5" /> : <MoonIcon className="w-5 h-5" />}
+        </button>
             </li>
           </ul>
         </div>

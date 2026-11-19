@@ -37,7 +37,7 @@ export default function Features() {
             data-aos="fade-right" data-aos-duration="1000"
           >
             Außergewöhnliche Eigenschaften <span className='text-lg xl:text-3xl font-light'>unserer</span> 
-            <span className={`font-serif italic text-[#795548] ml-2`}>Schokolade</span>
+            <span className={`font-serif italic text-[var(--accent-color)] ml-2`}>Schokolade</span>
           </h2>
 
           {/* --- Grid-Layout für Features und Bild --- */}
@@ -48,7 +48,7 @@ export default function Features() {
                 {featuresData.map((feature) => (
                     <section 
                         key={feature.title} 
-                        className={`group p-6 lg:p-8 rounded-xl bg-white shadow-lg border-t-4 border-[var(--accent-color)]/50 transition-all duration-300 hover:shadow-xl hover:scale-[1.01]`}
+                        className={`group p-6 lg:p-8 rounded-xl bg-[var(--surface)] shadow-lg border-t-4 border-[var(--accent-color)]/50 transition-all duration-300 hover:shadow-xl hover:scale-[1.01]`}
                         data-aos="fade-up"
                         data-aos-duration="1000"
                         data-aos-delay={feature.delay}
@@ -57,7 +57,7 @@ export default function Features() {
                             {/* Micro-Interaction: Icon mit subtilem Skalierungs- und Schatten-Effekt */}
                             <div className={`flex-shrink-0 w-12 h-12 p-2 rounded-full bg-[var(--accent-color)]/10 border border-[var(--accent-color)]/30 
                                 transition-all duration-300 group-hover:scale-[1.05] group-hover:shadow-[var(--accent-color)]/40`}>
-                                <img src={feature.icon} alt={feature.title} className='w-full h-full object-contain' />
+                                <img loading="lazy" decoding="async" src={feature.icon} alt={feature.title} className='w-full h-full object-contain' />
                             </div>
                             <div className='ml-4'>
                                 <h3 className='text-xl font-bold mb-1 group-hover:text-[var(--accent-color)] transition-colors duration-300'>{feature.title}</h3>
@@ -74,7 +74,7 @@ export default function Features() {
                 data-aos="fade-left" data-aos-duration="1000" data-aos-delay="300"
             >
                 {/* Das Bild mit der Floating-Animation */}
-                <img 
+                <img loading="lazy" decoding="async" 
                     src={Truffel} 
                     alt="Mehrere Schokoladentrüffel" 
                     className='w-4/6 lg:w-full max-w-sm lg:max-w-none h-auto object-contain drop-shadow-2xl float-feature'

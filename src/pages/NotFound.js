@@ -48,8 +48,8 @@ export default function NotFound() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <NavLink 
             to="/" 
-            className={`px-8 py-3 rounded-full bg-[var(--accent-color)] text-white font-semibold shadow-lg 
-                       transition-all duration-300 hover:bg-[var(--text-color)] hover:scale-105 hover:shadow-xl`}
+            className={`px-8 py-3 rounded-full bg-[var(--accent-strong)] text-white font-semibold shadow-lg 
+                       transition-all duration-300 hover:bg-[var(--button-hover)] hover:scale-105 hover:shadow-xl`}
           >
             Zurück zur Schokoecke
           </NavLink>
@@ -57,13 +57,13 @@ export default function NotFound() {
           <NavLink 
             to="/produkte" 
             className={`px-8 py-3 rounded-full border-2 border-[var(--accent-color)] text-[var(--accent-color)] 
-                       font-semibold transition-all duration-300 hover:bg-[var(--accent-color)] hover:text-white`}
+                       font-semibold transition-all duration-300 hover:bg-[var(--accent-strong)] hover:text-white`}
           >
             Unsere Produkte entdecken
           </NavLink>
         </div>
 
-        <p className="mt-16 text-sm text-gray-400 font-light italic">
+        <p className="mt-16 text-sm text-[var(--muted-text)] font-light italic">
           Tipp: Ein Stück Schokolade hilft fast immer gegen Verirrungen.
         </p>
       </div>

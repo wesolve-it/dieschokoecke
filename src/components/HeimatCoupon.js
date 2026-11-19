@@ -1,6 +1,6 @@
 export default function HeimatCoupon() {
   return (
-    <div className={`bg-[#EAE0D7] py-16 lg:py-24 text-[#3E2723]`} data-aos="fade-up" data-aos-duration="1000">
+    <div className={`bg-[var(--cta-bg)] py-16 lg:py-24 text-[var(--text-color)]`} data-aos="fade-up" data-aos-duration="1000">
       <div className='max-w-screen-xl mx-auto px-6 xl:px-0'>
         
         {/* --- Container für Inhalt und Logo --- */}
@@ -9,7 +9,7 @@ export default function HeimatCoupon() {
           {/* 1. Text-Sektion */}
           <div className='lg:w-1/2 text-center lg:text-left'>
             
-            <span className={`text-sm uppercase tracking-widest font-semibold text-[#795548] mb-2 block`}>
+            <span className={`text-sm uppercase tracking-widest font-semibold text-[var(--accent-color)] mb-2 block`}>
                 Lokale Partnerschaft
             </span>
             
@@ -27,16 +27,16 @@ export default function HeimatCoupon() {
               target="_blank" 
               rel="noopener noreferrer"
               className={`inline-block mt-4 px-6 py-3 text-base font-semibold rounded-full 
-                bg-[#795548] text-white transition-all duration-300 shadow-md 
-                hover:bg-[#795548] hover:shadow-lg hover:scale-[1.05]`}
+                bg-[var(--accent-strong)] text-white transition-all duration-300 shadow-md 
+                hover:bg-[var(--accent-strong)] hover:shadow-lg hover:scale-[1.05]`}
             >
               Mehr zum Gutschein erfahren
             </a>
           </div>
 
           {/* 2. Logo-Sektion */}
-          <div className='lg:w-1/2 flex justify-center lg:justify-end p-4 rounded-xl bg-white shadow-2xl'>
-            <img 
+          <div className='lg:w-1/2 flex justify-center lg:justify-end p-4 rounded-xl bg-[var(--surface)] shadow-2xl'>
+            <img loading="lazy" decoding="async" 
               src={require('../assets/n-land-1j9c4filjl4limt8zxul-logowide.png')} 
               alt="Logo Heimatgutschein N-LAND" 
               // Bildgröße kontrollieren, um es nicht zu dominant zu machen
